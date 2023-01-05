@@ -1,28 +1,26 @@
 version: 1
+build:
+  main: ./cmd/petri
+  binary: petri
+  proto:
+    path: proto
+    third_party_paths:
+    - third_party/proto
+    - proto_vendor
 accounts:
-  - name: alice
-    coins:
-      - 1000000000ustake
-      - 100000000000000000000stake
-  - name: bob
-    coins:
-      - 1000000000stake
-genesis:
-  app_state:
-    crisis:
-      constant_fee:
-        denom: stake
-    gov:
-      deposit_params:
-        min_deposit:
-          - amount: "10000"
-            denom: stake
-    mint:
-      params:
-        mint_denom: stake
-    staking:
-      params:
-        bond_denom: stake
+- name: alice
+  coins:
+  - 39000000000000stake
+  mnemonic: entry garbage bike poem grunt negative easily annual miss happy license
+    blur false fringe program picture inner tape dismiss eagle include quality drill
+    master
+- name: bob
+  coins:
+  - 5500000000000stake
+faucet:
+- name: faucet
+  coins:
+  - 5500000000000stake
 validators:
 - name: alice
-  bonded: 1000000stake
+  bonded: 100000stake
