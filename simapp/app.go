@@ -305,10 +305,10 @@ func init() {
 	sdk.SetCoinDenomRegex(DefaultCoinDenomRegex)
 
 	nativeToken = tokentypes.Token{
-		Symbol:        "petr",
+		Symbol:        "petri",
 		Name:          "Petrihub staking token",
 		Scale:         6,
-		MinUnit:       "upetr",
+		MinUnit:       "upetri",
 		InitialSupply: 2000000000,
 		MaxSupply:     10000000000,
 		Mintable:      true,
@@ -320,7 +320,7 @@ func init() {
 		panic(err)
 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".petr")
+	DefaultNodeHome = filepath.Join(userHomeDir, ".petri")
 	owner, err := sdk.AccAddressFromBech32(nativeToken.Owner)
 	if err != nil {
 		panic(err)

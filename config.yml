@@ -17,10 +17,6 @@ accounts:
 - name: bob
   coins:
   - 5500000000000stake
-faucet:
-- name: faucet
-  coins:
-  - 5500000000000stake
 validators:
 - name: alice
   bonded: 100000stake
