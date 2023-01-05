@@ -23,5 +23,3 @@ genesis:
     staking:
       params:
         bond_denom: stake
-  - validator: alice
-        bonded: 10000stake
