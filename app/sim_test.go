@@ -11,8 +11,8 @@ import (
 
 	coinswaptypes "github.com/petrinetwork/petrimod/modules/coinswap/types"
 	htlctypes "github.com/petrinetwork/petrimod/modules/htlc/types"
-	mttypes "github.com/petrinetwork/petrimod/modules/mt/types"
-	nfttypes "github.com/petrinetwork/petrimod/modules/nft/types"
+	mttypes "github.com/irisnet/irismod/modules/mt/types"
+	nfttypes "github.com/irisnet/irismod/modules/nft/types"
 	oracletypes "github.com/petrinetwork/petrimod/modules/oracle/types"
 	randomtypes "github.com/petrinetwork/petrimod/modules/random/types"
 	servicetypes "github.com/petrinetwork/petrimod/modules/service/types"
