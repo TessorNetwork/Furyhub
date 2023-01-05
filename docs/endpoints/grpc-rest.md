@@ -20,7 +20,7 @@ If, for various reasons, you cannot use gRPC (for example, you are building a we
 
 [gRPC-gateway](https://grpc-ecosystem.github.io/grpc-gateway/) is a tool to expose gRPC endpoints as REST endpoints. For each RPC endpoint defined in a Protobuf service, the SDK offers a REST equivalent. For instance, querying token list could be done via the `/petrimod.token.Query/Tokens` gRPC endpoint, or alternatively via the gRPC-gateway `/petrimod/token/tokens` REST endpoint: both will return the same result. For each RPC method defined in a Protobuf service, the corresponding REST endpoint is defined as an option:
 
-+++ https://github.com/petrinetwork/petrimod/blob/master/proto/token/query.proto#L22
++++ https://github.com/irisnet/irismod/blob/master/proto/token/query.proto#L22
 
 For application developers, gRPC-gateway REST routes needs to be wired up to the REST server, this is done by calling the `RegisterGRPCGatewayRoutes` function on the ModuleManager.
 

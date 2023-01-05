@@ -19,7 +19,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	tokentypes "github.com/petrinetwork/petrimod/modules/token/types"
+	tokentypes "github.com/irisnet/irismod/modules/token/types"
 )
 
 const (

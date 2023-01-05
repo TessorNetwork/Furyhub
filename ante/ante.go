@@ -7,8 +7,8 @@ import (
 
 	guardiankeeper "github.com/petrinetwork/petrihub/modules/guardian/keeper"
 
-	oraclekeeper "github.com/petrinetwork/petrimod/modules/oracle/keeper"
-	tokenkeeper "github.com/petrinetwork/petrimod/modules/token/keeper"
+	oraclekeeper "github.com/irisnet/irismod/modules/oracle/keeper"
+	tokenkeeper "github.com/irisnet/irismod/modules/token/keeper"
 )
 
 // HandlerOptions extend the SDK's AnteHandler options by requiring the IBC

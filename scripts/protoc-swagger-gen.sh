@@ -11,13 +11,13 @@ SDK_VERSION=v0.46.5
 PETRIMOD_VERSION=v1.7.2
 
 go mod download github.com/cosmos/cosmos-sdk@${SDK_VERSION}
-go mod download github.com/petrinetwork/petrimod@${PETRIMOD_VERSION}
+go mod download github.com/irisnet/irismod@${PETRIMOD_VERSION}
 
 chmod -R 755 ${GOPATH}/pkg/mod/github.com/cosmos/cosmos-sdk@${SDK_VERSION}/proto
-chmod -R 755 ${GOPATH}/pkg/mod/github.com/petrinetwork/petrimod@${PETRIMOD_VERSION}/proto
+chmod -R 755 ${GOPATH}/pkg/mod/github.com/irisnet/irismod@${PETRIMOD_VERSION}/proto
 
 cp -r ${GOPATH}/pkg/mod/github.com/cosmos/cosmos-sdk@${SDK_VERSION}/proto ./tmp && rm -rf ./tmp/proto/cosmos/mint
-cp -r ${GOPATH}/pkg/mod/github.com/petrinetwork/petrimod@${PETRIMOD_VERSION}/proto ./tmp
+cp -r ${GOPATH}/pkg/mod/github.com/irisnet/irismod@${PETRIMOD_VERSION}/proto ./tmp
 cp -r ./proto ./tmp
 
 proto_dirs=$(find ./tmp/proto -path -prune -o -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq)
