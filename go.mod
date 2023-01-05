@@ -13,7 +13,6 @@ require (
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/irisnet/irismod v1.7.2
 	github.com/olebedev/config v0.0.0-20190528211619-364964f3a8e4
-	github.com/petrinetwork/petrimod v1.7.2
 	github.com/pkg/errors v0.9.1
 	github.com/rakyll/statik v0.1.7
 	github.com/snikch/goodman v0.0.0-20171125024755-10e37e294daa
