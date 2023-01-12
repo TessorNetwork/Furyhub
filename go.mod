@@ -1,4 +1,4 @@
-module github.com/petrinetwork/petrihub
+module github.com/petri-labs/petrihub
 
 go 1.18
 
