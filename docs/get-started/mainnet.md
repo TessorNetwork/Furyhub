@@ -13,7 +13,7 @@ order: 3
 ### Start node from genesis
 
 :::tip
-**We recommend running a full node via state sync** (see the next subsection). But if you want to start from genesis, you must use petrihub [v1.0.1](https://github.com/petrinetwork/petrihub/releases/tag/v1.0.1) to initialize your node.
+**We recommend running a full node via state sync** (see the next subsection). But if you want to start from genesis, you must use petrihub [v1.0.1](https://github.com/petri-labs/petrihub/releases/tag/v1.0.1) to initialize your node.
 :::
 
 ```bash
@@ -21,8 +21,8 @@ order: 3
 petri init <moniker> --chain-id=petrihub-1
 
 # download mainnet public config.toml and genesis.json
-curl -o ~/.petri/config/config.toml https://raw.githubusercontent.com/petrinetwork/mainnet/master/config/config.toml
-curl -o ~/.petri/config/genesis.json https://raw.githubusercontent.com/petrinetwork/mainnet/master/config/genesis.json
+curl -o ~/.petri/config/config.toml https://raw.githubusercontent.com/irisnet/mainnet/master/config/config.toml
+curl -o ~/.petri/config/genesis.json https://raw.githubusercontent.com/irisnet/mainnet/master/config/genesis.json
 
 # start the node (you can also use "nohup" or "systemd" to run in the background)
 petri start
@@ -32,16 +32,16 @@ Next, your node will process all chain upgrades. Between each upgrade, you must 
 
 | Proposal | Start height | Upgrade height | petrihub version |
 | -------- | ------------ | -------------- | ----- |
-| genesis  |  9146456     |  9593205  | [v1.0.1](https://github.com/petrinetwork/petrihub/releases/tag/v1.0.1) |
-| [#1](https://petrihub.iobscan.io/#/ProposalsDetail/1)  |  9593206     |    | [v1.1.0](https://github.com/petrinetwork/petrihub/releases/tag/v1.1.0), [v1.1.1](https://github.com/petrinetwork/petrihub/releases/tag/v1.1.1)|
-| [#8](https://petrihub.iobscan.io/#/ProposalsDetail/8)  |  12393048     | 12534300 | [v1.2.0](https://github.com/petrinetwork/petrihub/releases/tag/v1.2.0), [v1.2.1](https://github.com/petrinetwork/petrihub/releases/tag/v1.2.1) |
-| [#11](https://petrihub.iobscan.io/#/ProposalsDetail/11)  |  14166918     |  14301916  | [v1.3.0](https://github.com/petrinetwork/petrihub/releases/tag/v1.3.0) |
-| [#19](https://petrihub.iobscan.io/#/gov/proposals/19)  |       |  17685953  | [v1.4.1](https://github.com/petrinetwork/petrihub/releases/tag/v1.4.1) |
+| genesis  |  9146456     |  9593205  | [v1.0.1](https://github.com/petri-labs/petrihub/releases/tag/v1.0.1) |
+| [#1](https://petrihub.iobscan.io/#/ProposalsDetail/1)  |  9593206     |    | [v1.1.0](https://github.com/petri-labs/petrihub/releases/tag/v1.1.0), [v1.1.1](https://github.com/petri-labs/petrihub/releases/tag/v1.1.1)|
+| [#8](https://petrihub.iobscan.io/#/ProposalsDetail/8)  |  12393048     | 12534300 | [v1.2.0](https://github.com/petri-labs/petrihub/releases/tag/v1.2.0), [v1.2.1](https://github.com/petri-labs/petrihub/releases/tag/v1.2.1) |
+| [#11](https://petrihub.iobscan.io/#/ProposalsDetail/11)  |  14166918     |  14301916  | [v1.3.0](https://github.com/petri-labs/petrihub/releases/tag/v1.3.0) |
+| [#19](https://petrihub.iobscan.io/#/gov/proposals/19)  |       |  17685953  | [v1.4.1](https://github.com/petri-labs/petrihub/releases/tag/v1.4.1) |
 
 :::tip
 You may see some connection errors, it does not matter, the P2P network is trying to find available connections
 
-Try to add some of the [Community Peers](https://github.com/petrinetwork/mainnet/blob/master/config/community-peers.md) to `persistent_peers` in the config.toml
+Try to add some of the [Community Peers](https://github.com/irisnet/mainnet/blob/master/config/community-peers.md) to `persistent_peers` in the config.toml
 
 If you want to quickly start the node and join PETRI Hub without historical data, you can consider using the [state_sync](./state-sync.md) function.
 :::
@@ -133,6 +133,6 @@ Read more:
 
 ## Faucet
 
-Request PETRInetwork mainnet tokens from the Faucet powered by Stakely.
+Request IRISnet mainnet tokens from the Faucet powered by Stakely.
 
-For the usage, please refer to the guideline on the Faucet page: https://stakely.io/faucet/petrinetwork-petri
+For the usage, please refer to the guideline on the Faucet page: https://stakely.io/faucet/irisnet-petri

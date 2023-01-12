@@ -3,7 +3,7 @@ package petrihub.guardian;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/petrinetwork/petrihub/modules/guardian/types";
+option go_package = "github.com/petri-labs/petrihub/modules/guardian/types";
 
 // Super defines the super standard
 message Super {

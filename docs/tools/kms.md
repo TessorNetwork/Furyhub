@@ -42,7 +42,7 @@ To enable KMS, you need to edit the `priv_validator_laddr` in your `<petri-home>
 priv_validator_laddr = "localhost:26658"
 ```
 
-Then, downLoad [priv_validator_state.json example](https://github.com/petrinetwork/petrihub/blob/master/docs/tools/priv_validator_state.json) and modify all field values to match your `<petri-home>/data/priv_validator_state.json` values.
+Then, downLoad [priv_validator_state.json example](https://github.com/petri-labs/petrihub/blob/master/docs/tools/priv_validator_state.json) and modify all field values to match your `<petri-home>/data/priv_validator_state.json` values.
 
 Next, you just need to edit the configuration file `/path/to/kms/home/tmkms.toml` as follows:
 

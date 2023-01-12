@@ -66,7 +66,7 @@ Consensus metrics, namespace: `tendermint`
 | state_recheck_time                   | Histogram |                  | Time cost on recheck in ms                                      |
 | state_app_hash_conflict              | Counter   | proposer, height | App hash conflict error                                         |
 
-PETRIhub metrics also contains tendermint metrics, Visit [tendermint metrics](https://github.com/petrinetwork/tendermint/blob/petrinetwork/master/docs/tendermint-core/metrics.md) for more information.
+PETRIhub metrics also contains tendermint metrics, Visit [tendermint metrics](https://github.com/irisnet/tendermint/blob/irisnet/master/docs/tendermint-core/metrics.md) for more information.
 
 ## Start Monitor
 

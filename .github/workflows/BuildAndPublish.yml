@@ -17,7 +17,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=petrinetwork/petrihub
+          DOCKER_IMAGE=petri-labs/petrihub
           VERSION=noop
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/}
@@ -54,8 +54,8 @@ jobs:
           platforms: linux/amd64,linux/arm64
           
 #       - name: Build petrihub image
-#         run: source ~/.bashrc; sudo docker build -t petrinetwork/petrihub:latest .
+#         run: source ~/.bashrc; sudo docker build -t petri-labs/petrihub:latest .
 #       - name: Login dockerhub
 #         run: sudo docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASS}}
 #       - name: Publish petrihub image
-#         run: sudo docker push petrinetwork/petrihub:latest
+#         run: sudo docker push petri-labs/petrihub:latest

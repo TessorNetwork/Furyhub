@@ -333,7 +333,7 @@ petri tx service call \
     },
     "body": {
         "id": "1",
-        "name": "petrinetwork",
+        "name": "irisnet",
         "data": "facedata"
     }
 }

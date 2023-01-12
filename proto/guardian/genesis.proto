@@ -4,7 +4,7 @@ package petrihub.guardian;
 import "guardian/guardian.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/petrinetwork/petrihub/modules/guardian/types";
+option go_package = "github.com/petri-labs/petrihub/modules/guardian/types";
 
 // GenesisState defines the guardian module's genesis state
 message GenesisState {

@@ -10,7 +10,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/petrinetwork/petrihub/address"
+	"github.com/petri-labs/petrihub/address"
 )
 
 // nolint: deadcode unused

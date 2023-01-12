@@ -37,4 +37,4 @@ petri start
 ## Others
 
 1. If any problem occurs during chain starting, you can execute `petri unsafe-reset-all` to reset the node and repeat the steps above.
-2. If you can't find solutions to the current issue, please contact us via [PETRInetwork Discord channel](https://discord.com/invite/bmhu9F9xbX) for help.
+2. If you can't find solutions to the current issue, please contact us via [IRISnet Discord channel](https://discord.com/invite/bmhu9F9xbX) for help.

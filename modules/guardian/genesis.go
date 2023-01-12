@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/petrinetwork/petrihub/modules/guardian/keeper"
-	"github.com/petrinetwork/petrihub/modules/guardian/types"
+	"github.com/petri-labs/petrihub/modules/guardian/keeper"
+	"github.com/petri-labs/petrihub/modules/guardian/types"
 )
 
 // InitGenesis stores genesis data

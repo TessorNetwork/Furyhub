@@ -235,19 +235,19 @@ Among the possible values of `message.action`:
 |              | cosmos-sdk/MsgBeginRedelegate             | redelegate           |
 |              | cosmos-sdk/MsgUndelegate                  | unbond               |
 | slashing     | cosmos-sdk/MsgUnjail                      | unjail               |
-| coinswap     | petrimod/MsgSwapOrder                      | swap                 |
-|              | petrimod/MsgAddLiquidity                   | add_liquidity        |
-|              | petrimod/MsgRemoveLiquidity                | remove_liquidity     |
-| htlc         | petrimod/MsgCreateHTLC                     | create_htlc          |
-|              | petrimod/MsgClaimHTLC                      | claim_htlc           |
-|              | petrimod/MsgRefundHTLC                     | refund_htlc          |
-| nft          | petrimod/MsgIssueDenom                     | issue_denom          |
-|              | petrimod/MsgMintNFT                        | mint_nft             |
-|              | petrimod/MsgBurnNFT                        | burn_nft             |
-|              | petrimod/MsgTransferNFT                    | transfer_nft         |
-|              | petrimod/MsgEditNFT                        | edit_nft             |
-| record       | petrimod/MsgCreateRecord                   | create_record        |
-| token        | petrimod/MsgIssueToken                     | issue_token          |
-|              | petrimod/MsgEditToken                      | edit_token           |
-|              | petrimod/MsgTransferTokenOwner             | transfer_token_owner |
-|              | petrimod/MsgMintToken                      | mint_token           |
+| coinswap     | irismod/MsgSwapOrder                      | swap                 |
+|              | irismod/MsgAddLiquidity                   | add_liquidity        |
+|              | irismod/MsgRemoveLiquidity                | remove_liquidity     |
+| htlc         | irismod/MsgCreateHTLC                     | create_htlc          |
+|              | irismod/MsgClaimHTLC                      | claim_htlc           |
+|              | irismod/MsgRefundHTLC                     | refund_htlc          |
+| nft          | irismod/MsgIssueDenom                     | issue_denom          |
+|              | irismod/MsgMintNFT                        | mint_nft             |
+|              | irismod/MsgBurnNFT                        | burn_nft             |
+|              | irismod/MsgTransferNFT                    | transfer_nft         |
+|              | irismod/MsgEditNFT                        | edit_nft             |
+| record       | irismod/MsgCreateRecord                   | create_record        |
+| token        | irismod/MsgIssueToken                     | issue_token          |
+|              | irismod/MsgEditToken                      | edit_token           |
+|              | irismod/MsgTransferTokenOwner             | transfer_token_owner |
+|              | irismod/MsgMintToken                      | mint_token           |

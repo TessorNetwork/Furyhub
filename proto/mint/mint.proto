@@ -4,7 +4,7 @@ package petrihub.mint;
 import "gogoproto/gogo.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/petrinetwork/petrihub/modules/mint/types";
+option go_package = "github.com/petri-labs/petrihub/modules/mint/types";
 
 // Minter represents the minting state
 message Minter {

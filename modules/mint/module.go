@@ -19,11 +19,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/petrinetwork/petrihub/modules/mint/client/cli"
-	"github.com/petrinetwork/petrihub/modules/mint/client/rest"
-	"github.com/petrinetwork/petrihub/modules/mint/keeper"
-	"github.com/petrinetwork/petrihub/modules/mint/simulation"
-	"github.com/petrinetwork/petrihub/modules/mint/types"
+	"github.com/petri-labs/petrihub/modules/mint/client/cli"
+	"github.com/petri-labs/petrihub/modules/mint/client/rest"
+	"github.com/petri-labs/petrihub/modules/mint/keeper"
+	"github.com/petri-labs/petrihub/modules/mint/simulation"
+	"github.com/petri-labs/petrihub/modules/mint/types"
 )
 
 var (

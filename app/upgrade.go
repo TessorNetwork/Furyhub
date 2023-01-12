@@ -56,13 +56,13 @@ import (
 	tibcclienttypes "github.com/bianjieai/tibc-go/modules/tibc/core/02-client/types"
 	tibchost "github.com/bianjieai/tibc-go/modules/tibc/core/24-host"
 
-	migratehtlc "github.com/petrinetwork/petrihub/migrate/htlc"
-	migrateservice "github.com/petrinetwork/petrihub/migrate/service"
-	migratetibc "github.com/petrinetwork/petrihub/migrate/tibc"
-	"github.com/petrinetwork/petrihub/modules/guardian"
-	guardiantypes "github.com/petrinetwork/petrihub/modules/guardian/types"
-	"github.com/petrinetwork/petrihub/modules/mint"
-	minttypes "github.com/petrinetwork/petrihub/modules/mint/types"
+	migratehtlc "github.com/petri-labs/petrihub/migrate/htlc"
+	migrateservice "github.com/petri-labs/petrihub/migrate/service"
+	migratetibc "github.com/petri-labs/petrihub/migrate/tibc"
+	"github.com/petri-labs/petrihub/modules/guardian"
+	guardiantypes "github.com/petri-labs/petrihub/modules/guardian/types"
+	"github.com/petri-labs/petrihub/modules/mint"
+	minttypes "github.com/petri-labs/petrihub/modules/mint/types"
 )
 
 // RegisterUpgradePlan register a handler of upgrade plan
