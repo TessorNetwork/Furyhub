@@ -5,9 +5,8 @@ set -euo pipefail
 installer="$(mktemp)"
 trap "rm -f ${installer}" EXIT
 
-GOBIN="${1}"
+GOBIN="$HOME/go/bin"
 CURL="$(which curl)"
-HASHSUM="${2}"
 
 f_sha256() {
     local l_file
