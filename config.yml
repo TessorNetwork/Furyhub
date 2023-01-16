@@ -17,6 +17,11 @@ accounts:
 - name: bob
   coins:
   - 5500000000000stake
+client:
+  typescript:
+    path: ts-client
+  hooks:
+    path: react/src/hooks
 validators:
 - name: alice
   bonded: 100000stake

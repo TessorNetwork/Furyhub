@@ -39723,758 +39723,6 @@ paths:
           format: uint64
       tags:
         - Query
-  /irismod/mt/denoms:
-    get:
-      summary: Denoms queries all the denoms
-      operationId: IrismodMtDenoms
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              denoms:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                    name:
-                      type: string
-                    data:
-                      type: string
-                      format: byte
-                    owner:
-                      type: string
-                  title: Denom defines a class of MTs
-              pagination:
-                type: object
-                properties:
-                  next_key:
-                    type: string
-                    format: byte
-                    title: |-
-                      next_key is the key to be passed to PageRequest.key to
-                      query the next page most efficiently
-                  total:
-                    type: string
-                    format: uint64
-                    title: >-
-                      total is total number of results available if
-                      PageRequest.count_total
-
-                      was set, its value is undefined otherwise
-                description: |-
-                  message SomeResponse {
-                           repeated Bar results = 1;
-                           PageResponse page = 2;
-                   }
-                title: >-
-                  PageResponse is to be embedded in gRPC response messages where
-                  the corresponding
-
-                  request message has used PageRequest
-            title: >-
-              QueryDenomsResponse is the response type for the Query/Denoms RPC
-              method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: pagination.key
-          description: |-
-            key is a value returned in PageResponse.next_key to begin
-            querying the next page most efficiently. Only one of offset or key
-            should be set.
-          in: query
-          required: false
-          type: string
-          format: byte
-        - name: pagination.offset
-          description: >-
-            offset is a numeric offset that can be used when key is unavailable.
-
-            It is less efficient than using key. Only one of offset or key
-            should
-
-            be set.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.limit
-          description: >-
-            limit is the total number of results to be returned in the result
-            page.
-
-            If left empty it will default to a value to be set by each app.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.count_total
-          description: >-
-            count_total is set to true  to indicate that the result set should
-            include
-
-            a count of the total number of items available for pagination in
-            UIs. count_total
-
-            is only respected when offset is used. It is ignored when key is
-            set.
-          in: query
-          required: false
-          type: boolean
-      tags:
-        - Query
-  /irismod/mt/denoms/supply:
-    get:
-      summary: Supply queries the total supply of a given denom or owner
-      operationId: IrismodMtSupply
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              amount:
-                type: string
-                format: uint64
-            title: >-
-              QuerySupplyResponse is the response type for the Query/Supply RPC
-              method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: denom_id
-          in: query
-          required: false
-          type: string
-        - name: owner
-          in: query
-          required: false
-          type: string
-      tags:
-        - Query
-  /irismod/mt/denoms/{denom_id}:
-    get:
-      summary: Denom queries the definition of a given denom ID
-      operationId: IrismodMtDenom
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              denom:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  name:
-                    type: string
-                  data:
-                    type: string
-                    format: byte
-                  owner:
-                    type: string
-                title: Denom defines a class of MTs
-            title: >-
-              QueryDenomResponse is the response type for the Query/Denom RPC
-              method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: denom_id
-          in: path
-          required: true
-          type: string
-      tags:
-        - Query
-  /irismod/mt/mts/{denom_id}:
-    get:
-      summary: MTs queries all the MTs of a given denom ID
-      operationId: IrismodMtMTs
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              mts:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                    supply:
-                      type: string
-                      format: uint64
-                    data:
-                      type: string
-                      format: byte
-                  title: MT defines a multi token
-              pagination:
-                type: object
-                properties:
-                  next_key:
-                    type: string
-                    format: byte
-                    title: |-
-                      next_key is the key to be passed to PageRequest.key to
-                      query the next page most efficiently
-                  total:
-                    type: string
-                    format: uint64
-                    title: >-
-                      total is total number of results available if
-                      PageRequest.count_total
-
-                      was set, its value is undefined otherwise
-                description: |-
-                  message SomeResponse {
-                           repeated Bar results = 1;
-                           PageResponse page = 2;
-                   }
-                title: >-
-                  PageResponse is to be embedded in gRPC response messages where
-                  the corresponding
-
-                  request message has used PageRequest
-            title: QueryMTsResponse is the response type for the Query/MTs RPC method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: denom_id
-          in: path
-          required: true
-          type: string
-        - name: pagination.key
-          description: |-
-            key is a value returned in PageResponse.next_key to begin
-            querying the next page most efficiently. Only one of offset or key
-            should be set.
-          in: query
-          required: false
-          type: string
-          format: byte
-        - name: pagination.offset
-          description: >-
-            offset is a numeric offset that can be used when key is unavailable.
-
-            It is less efficient than using key. Only one of offset or key
-            should
-
-            be set.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.limit
-          description: >-
-            limit is the total number of results to be returned in the result
-            page.
-
-            If left empty it will default to a value to be set by each app.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.count_total
-          description: >-
-            count_total is set to true  to indicate that the result set should
-            include
-
-            a count of the total number of items available for pagination in
-            UIs. count_total
-
-            is only respected when offset is used. It is ignored when key is
-            set.
-          in: query
-          required: false
-          type: boolean
-      tags:
-        - Query
-  /irismod/mt/mts/{denom_id}/{mt_id}:
-    get:
-      summary: MT queries the MT of the given denom and mt ID
-      operationId: IrismodMtMT
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              mt:
-                type: object
-                properties:
-                  id:
-                    type: string
-                  supply:
-                    type: string
-                    format: uint64
-                  data:
-                    type: string
-                    format: byte
-                title: MT defines a multi token
-            title: QueryMTResponse is the response type for the Query/MT RPC method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: denom_id
-          in: path
-          required: true
-          type: string
-        - name: mt_id
-          in: path
-          required: true
-          type: string
-      tags:
-        - Query
-  /irismod/mt/mts/{denom_id}/{mt_id}/supply:
-    get:
-      summary: MTSupply queries the total supply of given denom and mt ID
-      operationId: IrismodMtMTSupply
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              amount:
-                type: string
-                format: uint64
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: denom_id
-          in: path
-          required: true
-          type: string
-        - name: mt_id
-          in: path
-          required: true
-          type: string
-      tags:
-        - Query
-  /irismod/mt/mts/{owner}/balances:
-    get:
-      summary: Balances queries the MT balances of a specified owner
-      operationId: IrismodMtBalances
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              balance:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    mt_id:
-                      type: string
-                    amount:
-                      type: string
-                      format: uint64
-                  title: Balance defines multi token balance for owners
-              pagination:
-                type: object
-                properties:
-                  next_key:
-                    type: string
-                    format: byte
-                    title: |-
-                      next_key is the key to be passed to PageRequest.key to
-                      query the next page most efficiently
-                  total:
-                    type: string
-                    format: uint64
-                    title: >-
-                      total is total number of results available if
-                      PageRequest.count_total
-
-                      was set, its value is undefined otherwise
-                description: |-
-                  message SomeResponse {
-                           repeated Bar results = 1;
-                           PageResponse page = 2;
-                   }
-                title: >-
-                  PageResponse is to be embedded in gRPC response messages where
-                  the corresponding
-
-                  request message has used PageRequest
-            title: >-
-              QueryBalancesResponse is the response type for the Query/Balances
-              RPC method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: owner
-          in: path
-          required: true
-          type: string
-        - name: denom_id
-          in: query
-          required: false
-          type: string
-        - name: pagination.key
-          description: |-
-            key is a value returned in PageResponse.next_key to begin
-            querying the next page most efficiently. Only one of offset or key
-            should be set.
-          in: query
-          required: false
-          type: string
-          format: byte
-        - name: pagination.offset
-          description: >-
-            offset is a numeric offset that can be used when key is unavailable.
-
-            It is less efficient than using key. Only one of offset or key
-            should
-
-            be set.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.limit
-          description: >-
-            limit is the total number of results to be returned in the result
-            page.
-
-            If left empty it will default to a value to be set by each app.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.count_total
-          description: >-
-            count_total is set to true  to indicate that the result set should
-            include
-
-            a count of the total number of items available for pagination in
-            UIs. count_total
-
-            is only respected when offset is used. It is ignored when key is
-            set.
-          in: query
-          required: false
-          type: boolean
-      tags:
-        - Query
-  /petrihub/guardian/supers:
-    get:
-      summary: Supers returns all Supers
-      operationId: PetrihubGuardianSupers
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              supers:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    description:
-                      type: string
-                    account_type:
-                      type: string
-                      enum:
-                        - GENESIS
-                        - ORDINARY
-                      default: GENESIS
-                      description: |-
-                        - GENESIS: GENESIS defines a genesis account type
-                         - ORDINARY: ORDINARY defines a ordinary account type
-                      title: AccountType defines the super account type
-                    address:
-                      type: string
-                    added_by:
-                      type: string
-                  title: Super defines the super standard
-              pagination:
-                type: object
-                properties:
-                  next_key:
-                    type: string
-                    format: byte
-                    title: |-
-                      next_key is the key to be passed to PageRequest.key to
-                      query the next page most efficiently
-                  total:
-                    type: string
-                    format: uint64
-                    title: >-
-                      total is total number of results available if
-                      PageRequest.count_total
-
-                      was set, its value is undefined otherwise
-                description: |-
-                  message SomeResponse {
-                           repeated Bar results = 1;
-                           PageResponse page = 2;
-                   }
-                title: >-
-                  PageResponse is to be embedded in gRPC response messages where
-                  the corresponding
-
-                  request message has used PageRequest
-            title: >-
-              QuerySupersResponse is response type for the Query/Supers RPC
-              method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      parameters:
-        - name: pagination.key
-          description: |-
-            key is a value returned in PageResponse.next_key to begin
-            querying the next page most efficiently. Only one of offset or key
-            should be set.
-          in: query
-          required: false
-          type: string
-          format: byte
-        - name: pagination.offset
-          description: >-
-            offset is a numeric offset that can be used when key is unavailable.
-
-            It is less efficient than using key. Only one of offset or key
-            should
-
-            be set.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.limit
-          description: >-
-            limit is the total number of results to be returned in the result
-            page.
-
-            If left empty it will default to a value to be set by each app.
-          in: query
-          required: false
-          type: string
-          format: uint64
-        - name: pagination.count_total
-          description: >-
-            count_total is set to true  to indicate that the result set should
-            include
-
-            a count of the total number of items available for pagination in
-            UIs. count_total
-
-            is only respected when offset is used. It is ignored when key is
-            set.
-          in: query
-          required: false
-          type: boolean
-      tags:
-        - Query
-  /petrihub/mint/params:
-    get:
-      summary: Params queries the mint parameters
-      operationId: PetrihubMintParams
-      responses:
-        '200':
-          description: A successful response.
-          schema:
-            type: object
-            properties:
-              params:
-                type: object
-                properties:
-                  mint_denom:
-                    type: string
-                    title: type of coin to mint
-                  inflation:
-                    type: string
-                    title: inflation rate
-                title: Params defines mint module's parameters
-              res:
-                type: object
-                properties:
-                  next_key:
-                    type: string
-                    format: byte
-                    title: |-
-                      next_key is the key to be passed to PageRequest.key to
-                      query the next page most efficiently
-                  total:
-                    type: string
-                    format: uint64
-                    title: >-
-                      total is total number of results available if
-                      PageRequest.count_total
-
-                      was set, its value is undefined otherwise
-                description: |-
-                  message SomeResponse {
-                           repeated Bar results = 1;
-                           PageResponse page = 2;
-                   }
-                title: >-
-                  PageResponse is to be embedded in gRPC response messages where
-                  the corresponding
-
-                  request message has used PageRequest
-            title: >-
-              QueryParamsResponse is response type for the Query/Parameters RPC
-              method
-        default:
-          description: An unexpected error response.
-          schema:
-            type: object
-            properties:
-              code:
-                type: integer
-                format: int32
-              message:
-                type: string
-              details:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                  additionalProperties: {}
-      tags:
-        - Query
   /irismod/coinswap/pools:
     get:
       summary: LiquidityPools returns all the liquidity pools available
@@ -41593,6 +40841,561 @@ paths:
           in: path
           required: true
           type: string
+      tags:
+        - Query
+  /irismod/mt/denoms:
+    get:
+      summary: Denoms queries all the denoms
+      operationId: IrismodMtDenoms
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              denoms:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    data:
+                      type: string
+                      format: byte
+                    owner:
+                      type: string
+                  title: Denom defines a class of MTs
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: |-
+                  message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+                title: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the corresponding
+
+                  request message has used PageRequest
+            title: >-
+              QueryDenomsResponse is the response type for the Query/Denoms RPC
+              method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs. count_total
+
+            is only respected when offset is used. It is ignored when key is
+            set.
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /irismod/mt/denoms/supply:
+    get:
+      summary: Supply queries the total supply of a given denom or owner
+      operationId: IrismodMtSupply
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              amount:
+                type: string
+                format: uint64
+            title: >-
+              QuerySupplyResponse is the response type for the Query/Supply RPC
+              method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: denom_id
+          in: query
+          required: false
+          type: string
+        - name: owner
+          in: query
+          required: false
+          type: string
+      tags:
+        - Query
+  /irismod/mt/denoms/{denom_id}:
+    get:
+      summary: Denom queries the definition of a given denom ID
+      operationId: IrismodMtDenom
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              denom:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  data:
+                    type: string
+                    format: byte
+                  owner:
+                    type: string
+                title: Denom defines a class of MTs
+            title: >-
+              QueryDenomResponse is the response type for the Query/Denom RPC
+              method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: denom_id
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /irismod/mt/mts/{denom_id}:
+    get:
+      summary: MTs queries all the MTs of a given denom ID
+      operationId: IrismodMtMTs
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              mts:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    supply:
+                      type: string
+                      format: uint64
+                    data:
+                      type: string
+                      format: byte
+                  title: MT defines a multi token
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: |-
+                  message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+                title: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the corresponding
+
+                  request message has used PageRequest
+            title: QueryMTsResponse is the response type for the Query/MTs RPC method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: denom_id
+          in: path
+          required: true
+          type: string
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs. count_total
+
+            is only respected when offset is used. It is ignored when key is
+            set.
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /irismod/mt/mts/{denom_id}/{mt_id}:
+    get:
+      summary: MT queries the MT of the given denom and mt ID
+      operationId: IrismodMtMT
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              mt:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  supply:
+                    type: string
+                    format: uint64
+                  data:
+                    type: string
+                    format: byte
+                title: MT defines a multi token
+            title: QueryMTResponse is the response type for the Query/MT RPC method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: denom_id
+          in: path
+          required: true
+          type: string
+        - name: mt_id
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /irismod/mt/mts/{denom_id}/{mt_id}/supply:
+    get:
+      summary: MTSupply queries the total supply of given denom and mt ID
+      operationId: IrismodMtMTSupply
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              amount:
+                type: string
+                format: uint64
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: denom_id
+          in: path
+          required: true
+          type: string
+        - name: mt_id
+          in: path
+          required: true
+          type: string
+      tags:
+        - Query
+  /irismod/mt/mts/{owner}/balances:
+    get:
+      summary: Balances queries the MT balances of a specified owner
+      operationId: IrismodMtBalances
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              balance:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    mt_id:
+                      type: string
+                    amount:
+                      type: string
+                      format: uint64
+                  title: Balance defines multi token balance for owners
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: |-
+                  message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+                title: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the corresponding
+
+                  request message has used PageRequest
+            title: >-
+              QueryBalancesResponse is the response type for the Query/Balances
+              RPC method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: owner
+          in: path
+          required: true
+          type: string
+        - name: denom_id
+          in: query
+          required: false
+          type: string
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs. count_total
+
+            is only respected when offset is used. It is ignored when key is
+            set.
+          in: query
+          required: false
+          type: boolean
       tags:
         - Query
   /irismod/oracle/feeds:
@@ -44889,6 +44692,203 @@ paths:
                           "@type": "type.googleapis.com/google.protobuf.Duration",
                           "value": "1.212s"
                         }
+      tags:
+        - Query
+  /petrihub/guardian/supers:
+    get:
+      summary: Supers returns all Supers
+      operationId: PetrihubGuardianSupers
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              supers:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    description:
+                      type: string
+                    account_type:
+                      type: string
+                      enum:
+                        - GENESIS
+                        - ORDINARY
+                      default: GENESIS
+                      description: |-
+                        - GENESIS: GENESIS defines a genesis account type
+                         - ORDINARY: ORDINARY defines a ordinary account type
+                      title: AccountType defines the super account type
+                    address:
+                      type: string
+                    added_by:
+                      type: string
+                  title: Super defines the super standard
+              pagination:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: |-
+                  message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+                title: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the corresponding
+
+                  request message has used PageRequest
+            title: >-
+              QuerySupersResponse is response type for the Query/Supers RPC
+              method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
+      parameters:
+        - name: pagination.key
+          description: |-
+            key is a value returned in PageResponse.next_key to begin
+            querying the next page most efficiently. Only one of offset or key
+            should be set.
+          in: query
+          required: false
+          type: string
+          format: byte
+        - name: pagination.offset
+          description: >-
+            offset is a numeric offset that can be used when key is unavailable.
+
+            It is less efficient than using key. Only one of offset or key
+            should
+
+            be set.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.limit
+          description: >-
+            limit is the total number of results to be returned in the result
+            page.
+
+            If left empty it will default to a value to be set by each app.
+          in: query
+          required: false
+          type: string
+          format: uint64
+        - name: pagination.count_total
+          description: >-
+            count_total is set to true  to indicate that the result set should
+            include
+
+            a count of the total number of items available for pagination in
+            UIs. count_total
+
+            is only respected when offset is used. It is ignored when key is
+            set.
+          in: query
+          required: false
+          type: boolean
+      tags:
+        - Query
+  /petrihub/mint/params:
+    get:
+      summary: Params queries the mint parameters
+      operationId: PetrihubMintParams
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            type: object
+            properties:
+              params:
+                type: object
+                properties:
+                  mint_denom:
+                    type: string
+                    title: type of coin to mint
+                  inflation:
+                    type: string
+                    title: inflation rate
+                title: Params defines mint module's parameters
+              res:
+                type: object
+                properties:
+                  next_key:
+                    type: string
+                    format: byte
+                    title: |-
+                      next_key is the key to be passed to PageRequest.key to
+                      query the next page most efficiently
+                  total:
+                    type: string
+                    format: uint64
+                    title: >-
+                      total is total number of results available if
+                      PageRequest.count_total
+
+                      was set, its value is undefined otherwise
+                description: |-
+                  message SomeResponse {
+                           repeated Bar results = 1;
+                           PageResponse page = 2;
+                   }
+                title: >-
+                  PageResponse is to be embedded in gRPC response messages where
+                  the corresponding
+
+                  request message has used PageRequest
+            title: >-
+              QueryParamsResponse is response type for the Query/Parameters RPC
+              method
+        default:
+          description: An unexpected error response.
+          schema:
+            type: object
+            properties:
+              code:
+                type: integer
+                format: int32
+              message:
+                type: string
+              details:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    '@type':
+                      type: string
+                  additionalProperties: {}
       tags:
         - Query
   /tibc/apps/mt_transfer/v1/class_traces:
@@ -76592,379 +76592,6 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
-  irismod.mt.Balance:
-    type: object
-    properties:
-      mt_id:
-        type: string
-      amount:
-        type: string
-        format: uint64
-    title: Balance defines multi token balance for owners
-  irismod.mt.Denom:
-    type: object
-    properties:
-      id:
-        type: string
-      name:
-        type: string
-      data:
-        type: string
-        format: byte
-      owner:
-        type: string
-    title: Denom defines a class of MTs
-  irismod.mt.MT:
-    type: object
-    properties:
-      id:
-        type: string
-      supply:
-        type: string
-        format: uint64
-      data:
-        type: string
-        format: byte
-    title: MT defines a multi token
-  irismod.mt.MsgBurnMTResponse:
-    type: object
-    description: MsgBurnMTResponse defines the Msg/BurnMT response type.
-  irismod.mt.MsgEditMTResponse:
-    type: object
-    description: MsgEditMTResponse defines the Msg/EditMT response type.
-  irismod.mt.MsgIssueDenomResponse:
-    type: object
-    description: MsgIssueDenomResponse defines the Msg/IssueDenom response type.
-  irismod.mt.MsgMintMTResponse:
-    type: object
-    description: MsgMintMTResponse defines the Msg/MintMT response type.
-  irismod.mt.MsgTransferDenomResponse:
-    type: object
-    description: MsgTransferDenomResponse defines the Msg/TransferDenom response type.
-  irismod.mt.MsgTransferMTResponse:
-    type: object
-    description: MsgTransferMTResponse defines the Msg/TransferMT response type.
-  irismod.mt.QueryBalancesResponse:
-    type: object
-    properties:
-      balance:
-        type: array
-        items:
-          type: object
-          properties:
-            mt_id:
-              type: string
-            amount:
-              type: string
-              format: uint64
-          title: Balance defines multi token balance for owners
-      pagination:
-        type: object
-        properties:
-          next_key:
-            type: string
-            format: byte
-            title: |-
-              next_key is the key to be passed to PageRequest.key to
-              query the next page most efficiently
-          total:
-            type: string
-            format: uint64
-            title: >-
-              total is total number of results available if
-              PageRequest.count_total
-
-              was set, its value is undefined otherwise
-        description: |-
-          message SomeResponse {
-                   repeated Bar results = 1;
-                   PageResponse page = 2;
-           }
-        title: >-
-          PageResponse is to be embedded in gRPC response messages where the
-          corresponding
-
-          request message has used PageRequest
-    title: >-
-      QueryBalancesResponse is the response type for the Query/Balances RPC
-      method
-  irismod.mt.QueryDenomResponse:
-    type: object
-    properties:
-      denom:
-        type: object
-        properties:
-          id:
-            type: string
-          name:
-            type: string
-          data:
-            type: string
-            format: byte
-          owner:
-            type: string
-        title: Denom defines a class of MTs
-    title: QueryDenomResponse is the response type for the Query/Denom RPC method
-  irismod.mt.QueryDenomsResponse:
-    type: object
-    properties:
-      denoms:
-        type: array
-        items:
-          type: object
-          properties:
-            id:
-              type: string
-            name:
-              type: string
-            data:
-              type: string
-              format: byte
-            owner:
-              type: string
-          title: Denom defines a class of MTs
-      pagination:
-        type: object
-        properties:
-          next_key:
-            type: string
-            format: byte
-            title: |-
-              next_key is the key to be passed to PageRequest.key to
-              query the next page most efficiently
-          total:
-            type: string
-            format: uint64
-            title: >-
-              total is total number of results available if
-              PageRequest.count_total
-
-              was set, its value is undefined otherwise
-        description: |-
-          message SomeResponse {
-                   repeated Bar results = 1;
-                   PageResponse page = 2;
-           }
-        title: >-
-          PageResponse is to be embedded in gRPC response messages where the
-          corresponding
-
-          request message has used PageRequest
-    title: QueryDenomsResponse is the response type for the Query/Denoms RPC method
-  irismod.mt.QueryMTResponse:
-    type: object
-    properties:
-      mt:
-        type: object
-        properties:
-          id:
-            type: string
-          supply:
-            type: string
-            format: uint64
-          data:
-            type: string
-            format: byte
-        title: MT defines a multi token
-    title: QueryMTResponse is the response type for the Query/MT RPC method
-  irismod.mt.QueryMTSupplyResponse:
-    type: object
-    properties:
-      amount:
-        type: string
-        format: uint64
-  irismod.mt.QueryMTsResponse:
-    type: object
-    properties:
-      mts:
-        type: array
-        items:
-          type: object
-          properties:
-            id:
-              type: string
-            supply:
-              type: string
-              format: uint64
-            data:
-              type: string
-              format: byte
-          title: MT defines a multi token
-      pagination:
-        type: object
-        properties:
-          next_key:
-            type: string
-            format: byte
-            title: |-
-              next_key is the key to be passed to PageRequest.key to
-              query the next page most efficiently
-          total:
-            type: string
-            format: uint64
-            title: >-
-              total is total number of results available if
-              PageRequest.count_total
-
-              was set, its value is undefined otherwise
-        description: |-
-          message SomeResponse {
-                   repeated Bar results = 1;
-                   PageResponse page = 2;
-           }
-        title: >-
-          PageResponse is to be embedded in gRPC response messages where the
-          corresponding
-
-          request message has used PageRequest
-    title: QueryMTsResponse is the response type for the Query/MTs RPC method
-  irismod.mt.QuerySupplyResponse:
-    type: object
-    properties:
-      amount:
-        type: string
-        format: uint64
-    title: QuerySupplyResponse is the response type for the Query/Supply RPC method
-  petrihub.guardian.AccountType:
-    type: string
-    enum:
-      - GENESIS
-      - ORDINARY
-    default: GENESIS
-    description: |-
-      - GENESIS: GENESIS defines a genesis account type
-       - ORDINARY: ORDINARY defines a ordinary account type
-    title: AccountType defines the super account type
-  petrihub.guardian.MsgAddSuperResponse:
-    type: object
-    title: MsgAddSuperResponse defines the Msg/AddSuper response type
-  petrihub.guardian.MsgDeleteSuperResponse:
-    type: object
-    title: MsgDeleteSuperResponse defines the Msg/DeleteSuper response type
-  petrihub.guardian.QuerySupersResponse:
-    type: object
-    properties:
-      supers:
-        type: array
-        items:
-          type: object
-          properties:
-            description:
-              type: string
-            account_type:
-              type: string
-              enum:
-                - GENESIS
-                - ORDINARY
-              default: GENESIS
-              description: |-
-                - GENESIS: GENESIS defines a genesis account type
-                 - ORDINARY: ORDINARY defines a ordinary account type
-              title: AccountType defines the super account type
-            address:
-              type: string
-            added_by:
-              type: string
-          title: Super defines the super standard
-      pagination:
-        type: object
-        properties:
-          next_key:
-            type: string
-            format: byte
-            title: |-
-              next_key is the key to be passed to PageRequest.key to
-              query the next page most efficiently
-          total:
-            type: string
-            format: uint64
-            title: >-
-              total is total number of results available if
-              PageRequest.count_total
-
-              was set, its value is undefined otherwise
-        description: |-
-          message SomeResponse {
-                   repeated Bar results = 1;
-                   PageResponse page = 2;
-           }
-        title: >-
-          PageResponse is to be embedded in gRPC response messages where the
-          corresponding
-
-          request message has used PageRequest
-    title: QuerySupersResponse is response type for the Query/Supers RPC method
-  petrihub.guardian.Super:
-    type: object
-    properties:
-      description:
-        type: string
-      account_type:
-        type: string
-        enum:
-          - GENESIS
-          - ORDINARY
-        default: GENESIS
-        description: |-
-          - GENESIS: GENESIS defines a genesis account type
-           - ORDINARY: ORDINARY defines a ordinary account type
-        title: AccountType defines the super account type
-      address:
-        type: string
-      added_by:
-        type: string
-    title: Super defines the super standard
-  petrihub.mint.Params:
-    type: object
-    properties:
-      mint_denom:
-        type: string
-        title: type of coin to mint
-      inflation:
-        type: string
-        title: inflation rate
-    title: Params defines mint module's parameters
-  petrihub.mint.QueryParamsResponse:
-    type: object
-    properties:
-      params:
-        type: object
-        properties:
-          mint_denom:
-            type: string
-            title: type of coin to mint
-          inflation:
-            type: string
-            title: inflation rate
-        title: Params defines mint module's parameters
-      res:
-        type: object
-        properties:
-          next_key:
-            type: string
-            format: byte
-            title: |-
-              next_key is the key to be passed to PageRequest.key to
-              query the next page most efficiently
-          total:
-            type: string
-            format: uint64
-            title: >-
-              total is total number of results available if
-              PageRequest.count_total
-
-              was set, its value is undefined otherwise
-        description: |-
-          message SomeResponse {
-                   repeated Bar results = 1;
-                   PageResponse page = 2;
-           }
-        title: >-
-          PageResponse is to be embedded in gRPC response messages where the
-          corresponding
-
-          request message has used PageRequest
-    title: QueryParamsResponse is response type for the Query/Parameters RPC method
   irismod.coinswap.Input:
     type: object
     properties:
@@ -78345,6 +77972,239 @@ definitions:
        - INCOMING: INCOMING defines an htlt incoming direction.
        - OUTGOING: OUTGOING defines an htlt outgoing direction.
     title: SwapDirection defines the direction of an HTLT
+  irismod.mt.Balance:
+    type: object
+    properties:
+      mt_id:
+        type: string
+      amount:
+        type: string
+        format: uint64
+    title: Balance defines multi token balance for owners
+  irismod.mt.Denom:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      data:
+        type: string
+        format: byte
+      owner:
+        type: string
+    title: Denom defines a class of MTs
+  irismod.mt.MT:
+    type: object
+    properties:
+      id:
+        type: string
+      supply:
+        type: string
+        format: uint64
+      data:
+        type: string
+        format: byte
+    title: MT defines a multi token
+  irismod.mt.MsgBurnMTResponse:
+    type: object
+    description: MsgBurnMTResponse defines the Msg/BurnMT response type.
+  irismod.mt.MsgEditMTResponse:
+    type: object
+    description: MsgEditMTResponse defines the Msg/EditMT response type.
+  irismod.mt.MsgIssueDenomResponse:
+    type: object
+    description: MsgIssueDenomResponse defines the Msg/IssueDenom response type.
+  irismod.mt.MsgMintMTResponse:
+    type: object
+    description: MsgMintMTResponse defines the Msg/MintMT response type.
+  irismod.mt.MsgTransferDenomResponse:
+    type: object
+    description: MsgTransferDenomResponse defines the Msg/TransferDenom response type.
+  irismod.mt.MsgTransferMTResponse:
+    type: object
+    description: MsgTransferMTResponse defines the Msg/TransferMT response type.
+  irismod.mt.QueryBalancesResponse:
+    type: object
+    properties:
+      balance:
+        type: array
+        items:
+          type: object
+          properties:
+            mt_id:
+              type: string
+            amount:
+              type: string
+              format: uint64
+          title: Balance defines multi token balance for owners
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+        title: >-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding
+
+          request message has used PageRequest
+    title: >-
+      QueryBalancesResponse is the response type for the Query/Balances RPC
+      method
+  irismod.mt.QueryDenomResponse:
+    type: object
+    properties:
+      denom:
+        type: object
+        properties:
+          id:
+            type: string
+          name:
+            type: string
+          data:
+            type: string
+            format: byte
+          owner:
+            type: string
+        title: Denom defines a class of MTs
+    title: QueryDenomResponse is the response type for the Query/Denom RPC method
+  irismod.mt.QueryDenomsResponse:
+    type: object
+    properties:
+      denoms:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            data:
+              type: string
+              format: byte
+            owner:
+              type: string
+          title: Denom defines a class of MTs
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+        title: >-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding
+
+          request message has used PageRequest
+    title: QueryDenomsResponse is the response type for the Query/Denoms RPC method
+  irismod.mt.QueryMTResponse:
+    type: object
+    properties:
+      mt:
+        type: object
+        properties:
+          id:
+            type: string
+          supply:
+            type: string
+            format: uint64
+          data:
+            type: string
+            format: byte
+        title: MT defines a multi token
+    title: QueryMTResponse is the response type for the Query/MT RPC method
+  irismod.mt.QueryMTSupplyResponse:
+    type: object
+    properties:
+      amount:
+        type: string
+        format: uint64
+  irismod.mt.QueryMTsResponse:
+    type: object
+    properties:
+      mts:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+            supply:
+              type: string
+              format: uint64
+            data:
+              type: string
+              format: byte
+          title: MT defines a multi token
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+        title: >-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding
+
+          request message has used PageRequest
+    title: QueryMTsResponse is the response type for the Query/MTs RPC method
+  irismod.mt.QuerySupplyResponse:
+    type: object
+    properties:
+      amount:
+        type: string
+        format: uint64
+    title: QuerySupplyResponse is the response type for the Query/Supply RPC method
   irismod.oracle.Feed:
     type: object
     properties:
@@ -80266,6 +80126,146 @@ definitions:
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
     title: QueryTotalBurnResponse is response type for the Query/TotalBurn RPC method
+  petrihub.guardian.AccountType:
+    type: string
+    enum:
+      - GENESIS
+      - ORDINARY
+    default: GENESIS
+    description: |-
+      - GENESIS: GENESIS defines a genesis account type
+       - ORDINARY: ORDINARY defines a ordinary account type
+    title: AccountType defines the super account type
+  petrihub.guardian.MsgAddSuperResponse:
+    type: object
+    title: MsgAddSuperResponse defines the Msg/AddSuper response type
+  petrihub.guardian.MsgDeleteSuperResponse:
+    type: object
+    title: MsgDeleteSuperResponse defines the Msg/DeleteSuper response type
+  petrihub.guardian.QuerySupersResponse:
+    type: object
+    properties:
+      supers:
+        type: array
+        items:
+          type: object
+          properties:
+            description:
+              type: string
+            account_type:
+              type: string
+              enum:
+                - GENESIS
+                - ORDINARY
+              default: GENESIS
+              description: |-
+                - GENESIS: GENESIS defines a genesis account type
+                 - ORDINARY: ORDINARY defines a ordinary account type
+              title: AccountType defines the super account type
+            address:
+              type: string
+            added_by:
+              type: string
+          title: Super defines the super standard
+      pagination:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+        title: >-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding
+
+          request message has used PageRequest
+    title: QuerySupersResponse is response type for the Query/Supers RPC method
+  petrihub.guardian.Super:
+    type: object
+    properties:
+      description:
+        type: string
+      account_type:
+        type: string
+        enum:
+          - GENESIS
+          - ORDINARY
+        default: GENESIS
+        description: |-
+          - GENESIS: GENESIS defines a genesis account type
+           - ORDINARY: ORDINARY defines a ordinary account type
+        title: AccountType defines the super account type
+      address:
+        type: string
+      added_by:
+        type: string
+    title: Super defines the super standard
+  petrihub.mint.Params:
+    type: object
+    properties:
+      mint_denom:
+        type: string
+        title: type of coin to mint
+      inflation:
+        type: string
+        title: inflation rate
+    title: Params defines mint module's parameters
+  petrihub.mint.QueryParamsResponse:
+    type: object
+    properties:
+      params:
+        type: object
+        properties:
+          mint_denom:
+            type: string
+            title: type of coin to mint
+          inflation:
+            type: string
+            title: inflation rate
+        title: Params defines mint module's parameters
+      res:
+        type: object
+        properties:
+          next_key:
+            type: string
+            format: byte
+            title: |-
+              next_key is the key to be passed to PageRequest.key to
+              query the next page most efficiently
+          total:
+            type: string
+            format: uint64
+            title: >-
+              total is total number of results available if
+              PageRequest.count_total
+
+              was set, its value is undefined otherwise
+        description: |-
+          message SomeResponse {
+                   repeated Bar results = 1;
+                   PageResponse page = 2;
+           }
+        title: >-
+          PageResponse is to be embedded in gRPC response messages where the
+          corresponding
+
+          request message has used PageRequest
+    title: QueryParamsResponse is response type for the Query/Parameters RPC method
   tibc.apps.mt_transfer.v1.ClassTrace:
     type: object
     properties:
