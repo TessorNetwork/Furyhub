@@ -1,5 +1,5 @@
 #
-# Build image: docker build -t iris	net/irishub .
+# Build image: docker build -t tessornetwork/petrihub .
 #
 FROM golang:1.18-alpine3.16 as builder
 
