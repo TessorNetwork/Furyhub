@@ -197,7 +197,7 @@ benchmark:
 ### Local validator nodes using docker and docker-compose
 
 testnet-init:
-	@if ! [ -f build/nodecluster/node0/petri/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/home nimrostafarian/tessornetwork:petri petri testnet --v 4 --output-dir /home/nodecluster --chain-id petrihub-test --keyring-backend test --starting-ip-address 192.168.10.2 ; fi
+	@if ! [ -f build/nodecluster/node0/petri/config/genesis.json ]; then docker run --rm -v $(CURDIR)/build:/home nimrostafarian/tessornetwork:petridid petri testnet --v 4 --output-dir /home/nodecluster --chain-id petrihub-test --keyring-backend test --starting-ip-address 192.168.10.2 ; fi
 	@echo "To install jq command, please refer to this page: https://stedolan.github.io/jq/download/"
 	@jq '.app_state.auth.accounts+= [{"@type":"/cosmos.auth.v1beta1.BaseAccount","address":"iaa1ljemm0yznz58qxxs8xyak7fashcfxf5lgl4zjx","pub_key":null,"account_number":"0","sequence":"0"}] | .app_state.bank.balances+= [{"address":"iaa1ljemm0yznz58qxxs8xyak7fashcfxf5lgl4zjx","coins":[{"denom":"upetri","amount":"1000000000000"}]}]' build/nodecluster/node0/petri/config/genesis.json > build/genesis_temp.json ;
 	@sudo cp build/genesis_temp.json build/nodecluster/node0/petri/config/genesis.json
