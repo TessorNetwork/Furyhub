@@ -56,17 +56,17 @@ import (
 	tibcclienttypes "github.com/bianjieai/tibc-go/modules/tibc/core/02-client/types"
 	tibchost "github.com/bianjieai/tibc-go/modules/tibc/core/24-host"
 
-	migratehtlc "github.com/petri-labs/petrihub/migrate/htlc"
-	migrateservice "github.com/petri-labs/petrihub/migrate/service"
-	migratetibc "github.com/petri-labs/petrihub/migrate/tibc"
-	"github.com/petri-labs/petrihub/modules/guardian"
-	guardiantypes "github.com/petri-labs/petrihub/modules/guardian/types"
-	"github.com/petri-labs/petrihub/modules/mint"
-	minttypes "github.com/petri-labs/petrihub/modules/mint/types"
+	migratehtlc "github.com/tessornetwork/furyhub/migrate/htlc"
+	migrateservice "github.com/tessornetwork/furyhub/migrate/service"
+	migratetibc "github.com/tessornetwork/furyhub/migrate/tibc"
+	"github.com/tessornetwork/furyhub/modules/guardian"
+	guardiantypes "github.com/tessornetwork/furyhub/modules/guardian/types"
+	"github.com/tessornetwork/furyhub/modules/mint"
+	minttypes "github.com/tessornetwork/furyhub/modules/mint/types"
 )
 
 // RegisterUpgradePlan register a handler of upgrade plan
-func (app *PetriApp) RegisterUpgradePlan(cfg module.Configurator) {
+func (app *FuryApp) RegisterUpgradePlan(cfg module.Configurator) {
 	app.RegisterUpgradeHandler(
 		"v1.1", &store.StoreUpgrades{},
 		func(ctx sdk.Context, plan sdkupgrade.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
@@ -96,7 +96,7 @@ func (app *PetriApp) RegisterUpgradePlan(cfg module.Configurator) {
 				}},
 			)
 			tibcclienttypes.SetDefaultGenesisState(tibcclienttypes.GenesisState{
-				NativeChainName: "petrihub-mainnet",
+				NativeChainName: "furyhub-mainnet",
 			})
 
 			if err := migratetibc.CreateClient(ctx,

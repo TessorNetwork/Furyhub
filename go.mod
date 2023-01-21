@@ -1,4 +1,4 @@
-module github.com/petri-labs/petrihub
+module github.com/tessornetwork/furyhub
 
 go 1.18
 

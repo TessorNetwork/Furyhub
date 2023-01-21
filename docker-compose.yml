@@ -1,50 +1,50 @@
 version: '3'
 
 services:
-  petrinode0:
-    container_name: petrinode0
-    image: nimrostafarian/tessornetwork:petridid
+  furynode0:
+    container_name: furynode0
+    image: nimrostafarian/tessornetwork:furydid
     ports:
     - "26656-26657:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node0 && petri start --home petri'
+    command: /bin/sh -c 'cd /home/nodecluster/node0 && fury start --home fury'
     networks:
       localnet:
         ipv4_address: 192.168.10.2
 
-  petrinode1:
-    container_name: petrinode1
-    image: nimrostafarian/tessornetwork:petridid
+  furynode1:
+    container_name: furynode1
+    image: nimrostafarian/tessornetwork:furydid
     ports:
     - "26659-26660:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node1 && petri start --home petri'
+    command: /bin/sh -c 'cd /home/nodecluster/node1 && fury start --home fury'
     networks:
       localnet:
         ipv4_address: 192.168.10.3
 
-  petrinode2:
-    container_name: petrinode2
-    image: nimrostafarian/tessornetwork:petridid
+  furynode2:
+    container_name: furynode2
+    image: nimrostafarian/tessornetwork:furydid
     ports:
     - "26661-26662:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node2 && petri start --home petri'
+    command: /bin/sh -c 'cd /home/nodecluster/node2 && fury start --home fury'
     networks:
       localnet:
         ipv4_address: 192.168.10.4
 
-  petrinode3:
-    container_name: petrinode3
-    image: nimrostafarian/tessornetwork:petridid
+  furynode3:
+    container_name: furynode3
+    image: nimrostafarian/tessornetwork:furydid
     ports:
     - "26663-26664:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node3 && petri start --home petri'
+    command: /bin/sh -c 'cd /home/nodecluster/node3 && fury start --home fury'
     networks:
       localnet:
         ipv4_address: 192.168.10.5

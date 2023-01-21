@@ -1,16 +1,16 @@
-# PETRIhub
+# FURYhub
 
-![Banner](https://raw.githubusercontent.com/petri-labs/petrihub/master/docs/pics/petri.jpg)
+![Banner](https://raw.githubusercontent.com/tessornetwork/furyhub/master/docs/pics/fury.jpg)
 
-[![License](https://img.shields.io/github/license/petri-labs/petrihub.svg)](https://github.com/petri-labs/petrihub/blob/master/LICENSE)
-[![Version](https://img.shields.io/github/tag/petri-labs/petrihub.svg)](https://github.com/petri-labs/petrihub/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/petri-labs/petrihub)](https://goreportcard.com/report/github.com/petri-labs/petrihub)
+[![License](https://img.shields.io/github/license/tessornetwork/furyhub.svg)](https://github.com/tessornetwork/furyhub/blob/master/LICENSE)
+[![Version](https://img.shields.io/github/tag/tessornetwork/furyhub.svg)](https://github.com/tessornetwork/furyhub/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/tessornetwork/furyhub)](https://goreportcard.com/report/github.com/tessornetwork/furyhub)
 [![Forum](https://img.shields.io/discourse/https/forum.irisnet.org/topics.svg)](https://forum.irisnet.org/)
 
-PETRI network (a.k.a. IRISnet) aims to establish a technology foundation to facilitate construction of next-generation distributed applications. By incorporating a comprehensive service infrastructure and an enhanced IBC protocol into the Tendermint & Cosmos stack, IRISnet enables service interoperability as well as token transfers across an internet of blockchains.
-As the centerpiece of IRISnet, PETRI Hub (a.k.a. PETRIhub) will be the first regional hub connecting to the main Cosmos Hub, thus making IRISnet an inseparable part of the whole Cosmos network.
+FURY network (a.k.a. FURYnet) aims to establish a technology foundation to facilitate construction of next-generation distributed applications. By incorporating a comprehensive service infrastructure and an enhanced IBC protocol into the Tendermint & Cosmos stack, FURYnet enables service interoperability as well as token transfers across an internet of blockchains.
+As the centerpiece of FURYnet, FURY Hub (a.k.a. FURYhub) will be the first regional hub connecting to the main Cosmos Hub, thus making FURYnet an inseparable part of the whole Cosmos network.
 
-## PETRI Hub Mainnet
+## FURY Hub Mainnet
 
 To join the mainnet, follow [this guide](https://www.irisnet.org/docs/get-started/mainnet.html).
 
@@ -20,7 +20,7 @@ See the [install instructions](https://www.irisnet.org/docs/get-started/install.
 
 ## Resources
 
-* Explorer: <https://petrihub.iobscan.io/>
+* Explorer: <https://furyhub.iobscan.io/>
 * Discord: <https://discord.gg/rUVw3RWfKp>
 
 ## How To Contribute

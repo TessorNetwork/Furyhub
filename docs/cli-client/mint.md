@@ -6,12 +6,12 @@ Mint module is in charge of calculating the inflated token amount and add the in
 
 | Name                              | Description                       |
 | --------------------------------- | --------------------------------- |
-| [params](#petri-query-mint-params) | Query the current mint parameters |
+| [params](#fury-query-mint-params) | Query the current mint parameters |
 
-### petri query mint params
+### fury query mint params
 
 Query the current mint parameters.
 
 ```bash
-petri query mint params [flags]
+fury query mint params [flags]
 ```

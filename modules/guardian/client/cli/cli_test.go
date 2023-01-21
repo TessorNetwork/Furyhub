@@ -15,10 +15,10 @@ import (
 	"github.com/gogo/protobuf/proto"
 	"github.com/stretchr/testify/suite"
 
-	guardiancli "github.com/petri-labs/petrihub/modules/guardian/client/cli"
-	guardiantestutil "github.com/petri-labs/petrihub/modules/guardian/client/testutil"
-	guardiantypes "github.com/petri-labs/petrihub/modules/guardian/types"
-	"github.com/petri-labs/petrihub/simapp"
+	guardiancli "github.com/tessornetwork/furyhub/modules/guardian/client/cli"
+	guardiantestutil "github.com/tessornetwork/furyhub/modules/guardian/client/testutil"
+	guardiantypes "github.com/tessornetwork/furyhub/modules/guardian/types"
+	"github.com/tessornetwork/furyhub/simapp"
 )
 
 var privKey cryptotypes.PrivKey

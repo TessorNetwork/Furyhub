@@ -7,7 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/petri-labs/petrihub/modules/guardian/types"
+	"github.com/tessornetwork/furyhub/modules/guardian/types"
 )
 
 // NewQuerier creates a querier for guardian REST endpoints

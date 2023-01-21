@@ -14,9 +14,9 @@ import (
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/petri-labs/petrihub/modules/guardian/keeper"
-	"github.com/petri-labs/petrihub/modules/guardian/types"
-	"github.com/petri-labs/petrihub/simapp"
+	"github.com/tessornetwork/furyhub/modules/guardian/keeper"
+	"github.com/tessornetwork/furyhub/modules/guardian/types"
+	"github.com/tessornetwork/furyhub/simapp"
 )
 
 var (

@@ -10,9 +10,9 @@ import (
 	sdkmath "cosmossdk.io/math"
 	"github.com/cosmos/cosmos-sdk/types/kv"
 
-	"github.com/petri-labs/petrihub/modules/mint/simulation"
-	"github.com/petri-labs/petrihub/modules/mint/types"
-	"github.com/petri-labs/petrihub/simapp"
+	"github.com/tessornetwork/furyhub/modules/mint/simulation"
+	"github.com/tessornetwork/furyhub/modules/mint/types"
+	"github.com/tessornetwork/furyhub/simapp"
 )
 
 func TestDecodeStore(t *testing.T) {

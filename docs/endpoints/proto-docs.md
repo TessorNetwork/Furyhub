@@ -531,26 +531,26 @@ order: 6
     - [Msg](#irismod.farm.Msg)
   
 - [guardian/guardian.proto](#guardian/guardian.proto)
-    - [Super](#petrihub.guardian.Super)
+    - [Super](#furyhub.guardian.Super)
   
-    - [AccountType](#petrihub.guardian.AccountType)
+    - [AccountType](#furyhub.guardian.AccountType)
   
 - [guardian/genesis.proto](#guardian/genesis.proto)
-    - [GenesisState](#petrihub.guardian.GenesisState)
+    - [GenesisState](#furyhub.guardian.GenesisState)
   
 - [guardian/query.proto](#guardian/query.proto)
-    - [QuerySupersRequest](#petrihub.guardian.QuerySupersRequest)
-    - [QuerySupersResponse](#petrihub.guardian.QuerySupersResponse)
+    - [QuerySupersRequest](#furyhub.guardian.QuerySupersRequest)
+    - [QuerySupersResponse](#furyhub.guardian.QuerySupersResponse)
   
-    - [Query](#petrihub.guardian.Query)
+    - [Query](#furyhub.guardian.Query)
   
 - [guardian/tx.proto](#guardian/tx.proto)
-    - [MsgAddSuper](#petrihub.guardian.MsgAddSuper)
-    - [MsgAddSuperResponse](#petrihub.guardian.MsgAddSuperResponse)
-    - [MsgDeleteSuper](#petrihub.guardian.MsgDeleteSuper)
-    - [MsgDeleteSuperResponse](#petrihub.guardian.MsgDeleteSuperResponse)
+    - [MsgAddSuper](#furyhub.guardian.MsgAddSuper)
+    - [MsgAddSuperResponse](#furyhub.guardian.MsgAddSuperResponse)
+    - [MsgDeleteSuper](#furyhub.guardian.MsgDeleteSuper)
+    - [MsgDeleteSuperResponse](#furyhub.guardian.MsgDeleteSuperResponse)
   
-    - [Msg](#petrihub.guardian.Msg)
+    - [Msg](#furyhub.guardian.Msg)
   
 - [htlc/htlc.proto](#htlc/htlc.proto)
     - [AssetParam](#irismod.htlc.AssetParam)
@@ -796,17 +796,17 @@ order: 6
     - [Misbehaviour](#ibc.lightclients.tendermint.v1.Misbehaviour)
   
 - [mint/mint.proto](#mint/mint.proto)
-    - [Minter](#petrihub.mint.Minter)
-    - [Params](#petrihub.mint.Params)
+    - [Minter](#furyhub.mint.Minter)
+    - [Params](#furyhub.mint.Params)
   
 - [mint/genesis.proto](#mint/genesis.proto)
-    - [GenesisState](#petrihub.mint.GenesisState)
+    - [GenesisState](#furyhub.mint.GenesisState)
   
 - [mint/query.proto](#mint/query.proto)
-    - [QueryParamsRequest](#petrihub.mint.QueryParamsRequest)
-    - [QueryParamsResponse](#petrihub.mint.QueryParamsResponse)
+    - [QueryParamsRequest](#furyhub.mint.QueryParamsRequest)
+    - [QueryParamsResponse](#furyhub.mint.QueryParamsResponse)
   
-    - [Query](#petrihub.mint.Query)
+    - [Query](#furyhub.mint.Query)
   
 - [nft/nft.proto](#nft/nft.proto)
     - [BaseNFT](#irismod.nft.BaseNFT)
@@ -8032,7 +8032,7 @@ Msg defines the farm Msg service.
 
 
 
-<a name="petrihub.guardian.Super"></a>
+<a name="furyhub.guardian.Super"></a>
 
 ### Super
 Super defines the super standard
@@ -8041,7 +8041,7 @@ Super defines the super standard
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | `description` | [string](#string) |  |  |
-| `account_type` | [AccountType](#petrihub.guardian.AccountType) |  |  |
+| `account_type` | [AccountType](#furyhub.guardian.AccountType) |  |  |
 | `address` | [string](#string) |  |  |
 | `added_by` | [string](#string) |  |  |
 
@@ -8052,7 +8052,7 @@ Super defines the super standard
  <!-- end messages -->
 
 
-<a name="petrihub.guardian.AccountType"></a>
+<a name="furyhub.guardian.AccountType"></a>
 
 ### AccountType
 AccountType defines the super account type
@@ -8078,7 +8078,7 @@ AccountType defines the super account type
 
 
 
-<a name="petrihub.guardian.GenesisState"></a>
+<a name="furyhub.guardian.GenesisState"></a>
 
 ### GenesisState
 GenesisState defines the guardian module's genesis state
@@ -8086,7 +8086,7 @@ GenesisState defines the guardian module's genesis state
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `supers` | [Super](#petrihub.guardian.Super) | repeated |  |
+| `supers` | [Super](#furyhub.guardian.Super) | repeated |  |
 
 
 
@@ -8109,7 +8109,7 @@ GenesisState defines the guardian module's genesis state
 
 
 
-<a name="petrihub.guardian.QuerySupersRequest"></a>
+<a name="furyhub.guardian.QuerySupersRequest"></a>
 
 ### QuerySupersRequest
 QuerySupersRequest is request type for the Query/Supers RPC method
@@ -8124,7 +8124,7 @@ QuerySupersRequest is request type for the Query/Supers RPC method
 
 
 
-<a name="petrihub.guardian.QuerySupersResponse"></a>
+<a name="furyhub.guardian.QuerySupersResponse"></a>
 
 ### QuerySupersResponse
 QuerySupersResponse is response type for the Query/Supers RPC method
@@ -8132,7 +8132,7 @@ QuerySupersResponse is response type for the Query/Supers RPC method
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `supers` | [Super](#petrihub.guardian.Super) | repeated |  |
+| `supers` | [Super](#furyhub.guardian.Super) | repeated |  |
 | `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
 
 
@@ -8146,14 +8146,14 @@ QuerySupersResponse is response type for the Query/Supers RPC method
  <!-- end HasExtensions -->
 
 
-<a name="petrihub.guardian.Query"></a>
+<a name="furyhub.guardian.Query"></a>
 
 ### Query
 Query creates service with guardian as RPC
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Supers` | [QuerySupersRequest](#petrihub.guardian.QuerySupersRequest) | [QuerySupersResponse](#petrihub.guardian.QuerySupersResponse) | Supers returns all Supers | GET|/petrihub/guardian/supers|
+| `Supers` | [QuerySupersRequest](#furyhub.guardian.QuerySupersRequest) | [QuerySupersResponse](#furyhub.guardian.QuerySupersResponse) | Supers returns all Supers | GET|/furyhub/guardian/supers|
 
  <!-- end services -->
 
@@ -8166,7 +8166,7 @@ Query creates service with guardian as RPC
 
 
 
-<a name="petrihub.guardian.MsgAddSuper"></a>
+<a name="furyhub.guardian.MsgAddSuper"></a>
 
 ### MsgAddSuper
 MsgAddSuper defines the properties of add super account message
@@ -8183,7 +8183,7 @@ MsgAddSuper defines the properties of add super account message
 
 
 
-<a name="petrihub.guardian.MsgAddSuperResponse"></a>
+<a name="furyhub.guardian.MsgAddSuperResponse"></a>
 
 ### MsgAddSuperResponse
 MsgAddSuperResponse defines the Msg/AddSuper response type
@@ -8193,7 +8193,7 @@ MsgAddSuperResponse defines the Msg/AddSuper response type
 
 
 
-<a name="petrihub.guardian.MsgDeleteSuper"></a>
+<a name="furyhub.guardian.MsgDeleteSuper"></a>
 
 ### MsgDeleteSuper
 MsgDeleteSuper defines the properties of delete super account message
@@ -8209,7 +8209,7 @@ MsgDeleteSuper defines the properties of delete super account message
 
 
 
-<a name="petrihub.guardian.MsgDeleteSuperResponse"></a>
+<a name="furyhub.guardian.MsgDeleteSuperResponse"></a>
 
 ### MsgDeleteSuperResponse
 MsgDeleteSuperResponse defines the Msg/DeleteSuper response type
@@ -8225,15 +8225,15 @@ MsgDeleteSuperResponse defines the Msg/DeleteSuper response type
  <!-- end HasExtensions -->
 
 
-<a name="petrihub.guardian.Msg"></a>
+<a name="furyhub.guardian.Msg"></a>
 
 ### Msg
 Msg defines the guardian Msg service
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `AddSuper` | [MsgAddSuper](#petrihub.guardian.MsgAddSuper) | [MsgAddSuperResponse](#petrihub.guardian.MsgAddSuperResponse) | AddSuper defines a method for adding a super account | |
-| `DeleteSuper` | [MsgDeleteSuper](#petrihub.guardian.MsgDeleteSuper) | [MsgDeleteSuperResponse](#petrihub.guardian.MsgDeleteSuperResponse) | DeleteSuper defines a method for deleting a super account | |
+| `AddSuper` | [MsgAddSuper](#furyhub.guardian.MsgAddSuper) | [MsgAddSuperResponse](#furyhub.guardian.MsgAddSuperResponse) | AddSuper defines a method for adding a super account | |
+| `DeleteSuper` | [MsgDeleteSuper](#furyhub.guardian.MsgDeleteSuper) | [MsgDeleteSuperResponse](#furyhub.guardian.MsgDeleteSuperResponse) | DeleteSuper defines a method for deleting a super account | |
 
  <!-- end services -->
 
@@ -11652,7 +11652,7 @@ that implements Misbehaviour interface expected by ICS-02
 
 
 
-<a name="petrihub.mint.Minter"></a>
+<a name="furyhub.mint.Minter"></a>
 
 ### Minter
 Minter represents the minting state
@@ -11668,7 +11668,7 @@ Minter represents the minting state
 
 
 
-<a name="petrihub.mint.Params"></a>
+<a name="furyhub.mint.Params"></a>
 
 ### Params
 Params defines mint module's parameters
@@ -11700,7 +11700,7 @@ Params defines mint module's parameters
 
 
 
-<a name="petrihub.mint.GenesisState"></a>
+<a name="furyhub.mint.GenesisState"></a>
 
 ### GenesisState
 GenesisState defines the mint module's genesis state
@@ -11708,8 +11708,8 @@ GenesisState defines the mint module's genesis state
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `minter` | [Minter](#petrihub.mint.Minter) |  |  |
-| `params` | [Params](#petrihub.mint.Params) |  |  |
+| `minter` | [Minter](#furyhub.mint.Minter) |  |  |
+| `params` | [Params](#furyhub.mint.Params) |  |  |
 
 
 
@@ -11732,7 +11732,7 @@ GenesisState defines the mint module's genesis state
 
 
 
-<a name="petrihub.mint.QueryParamsRequest"></a>
+<a name="furyhub.mint.QueryParamsRequest"></a>
 
 ### QueryParamsRequest
 QueryParamsRequest is request type for the Query/Parameters RPC method
@@ -11742,7 +11742,7 @@ QueryParamsRequest is request type for the Query/Parameters RPC method
 
 
 
-<a name="petrihub.mint.QueryParamsResponse"></a>
+<a name="furyhub.mint.QueryParamsResponse"></a>
 
 ### QueryParamsResponse
 QueryParamsResponse is response type for the Query/Parameters RPC method
@@ -11750,7 +11750,7 @@ QueryParamsResponse is response type for the Query/Parameters RPC method
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| `params` | [Params](#petrihub.mint.Params) |  |  |
+| `params` | [Params](#furyhub.mint.Params) |  |  |
 | `res` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  |  |
 
 
@@ -11764,14 +11764,14 @@ QueryParamsResponse is response type for the Query/Parameters RPC method
  <!-- end HasExtensions -->
 
 
-<a name="petrihub.mint.Query"></a>
+<a name="furyhub.mint.Query"></a>
 
 ### Query
 Query creates service with guardian as rpc
 
 | Method Name | Request Type | Response Type | Description | HTTP Verb | Endpoint |
 | ----------- | ------------ | ------------- | ------------| ------- | -------- |
-| `Params` | [QueryParamsRequest](#petrihub.mint.QueryParamsRequest) | [QueryParamsResponse](#petrihub.mint.QueryParamsResponse) | Params queries the mint parameters | GET|/petrihub/mint/params|
+| `Params` | [QueryParamsRequest](#furyhub.mint.QueryParamsRequest) | [QueryParamsResponse](#furyhub.mint.QueryParamsResponse) | Params queries the mint parameters | GET|/furyhub/mint/params|
 
  <!-- end services -->
 

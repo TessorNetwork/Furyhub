@@ -8,7 +8,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 
-	_ "github.com/petri-labs/petrihub/lite/statik"
+	_ "github.com/tessornetwork/furyhub/lite/statik"
 )
 
 // RegisterSwaggerAPI registers swagger route with API Server

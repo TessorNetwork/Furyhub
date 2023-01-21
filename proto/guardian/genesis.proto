@@ -1,10 +1,10 @@
 syntax = "proto3";
-package petrihub.guardian;
+package furyhub.guardian;
 
 import "guardian/guardian.proto";
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/petri-labs/petrihub/modules/guardian/types";
+option go_package = "github.com/tessornetwork/furyhub/modules/guardian/types";
 
 // GenesisState defines the guardian module's genesis state
 message GenesisState {

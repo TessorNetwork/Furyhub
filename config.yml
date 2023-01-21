@@ -1,7 +1,7 @@
 version: 1
 build:
-  main: ./cmd/petri
-  binary: petri
+  main: ./cmd/fury
+  binary: fury
   proto:
     path: proto
     third_party_paths:

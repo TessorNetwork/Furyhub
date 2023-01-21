@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/petri-labs/petrihub/modules/mint/keeper"
-	"github.com/petri-labs/petrihub/modules/mint/types"
+	"github.com/tessornetwork/furyhub/modules/mint/keeper"
+	"github.com/tessornetwork/furyhub/modules/mint/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

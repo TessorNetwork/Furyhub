@@ -21,5 +21,5 @@ Mgoogle/protobuf/any.proto=github.com/cosmos/cosmos-sdk/codec/types:. \
 done
 
 # move proto files to the right places
-cp -r github.com/petri-labs/petrihub/* ./
+cp -r github.com/tessornetwork/furyhub/* ./
 rm -rf github.com

@@ -44694,10 +44694,10 @@ paths:
                         }
       tags:
         - Query
-  /petrihub/guardian/supers:
+  /furyhub/guardian/supers:
     get:
       summary: Supers returns all Supers
-      operationId: PetrihubGuardianSupers
+      operationId: FuryhubGuardianSupers
       responses:
         '200':
           description: A successful response.
@@ -44821,10 +44821,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /petrihub/mint/params:
+  /furyhub/mint/params:
     get:
       summary: Params queries the mint parameters
-      operationId: PetrihubMintParams
+      operationId: FuryhubMintParams
       responses:
         '200':
           description: A successful response.
@@ -80126,7 +80126,7 @@ definitions:
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
     title: QueryTotalBurnResponse is response type for the Query/TotalBurn RPC method
-  petrihub.guardian.AccountType:
+  furyhub.guardian.AccountType:
     type: string
     enum:
       - GENESIS
@@ -80136,13 +80136,13 @@ definitions:
       - GENESIS: GENESIS defines a genesis account type
        - ORDINARY: ORDINARY defines a ordinary account type
     title: AccountType defines the super account type
-  petrihub.guardian.MsgAddSuperResponse:
+  furyhub.guardian.MsgAddSuperResponse:
     type: object
     title: MsgAddSuperResponse defines the Msg/AddSuper response type
-  petrihub.guardian.MsgDeleteSuperResponse:
+  furyhub.guardian.MsgDeleteSuperResponse:
     type: object
     title: MsgDeleteSuperResponse defines the Msg/DeleteSuper response type
-  petrihub.guardian.QuerySupersResponse:
+  furyhub.guardian.QuerySupersResponse:
     type: object
     properties:
       supers:
@@ -80195,7 +80195,7 @@ definitions:
 
           request message has used PageRequest
     title: QuerySupersResponse is response type for the Query/Supers RPC method
-  petrihub.guardian.Super:
+  furyhub.guardian.Super:
     type: object
     properties:
       description:
@@ -80215,7 +80215,7 @@ definitions:
       added_by:
         type: string
     title: Super defines the super standard
-  petrihub.mint.Params:
+  furyhub.mint.Params:
     type: object
     properties:
       mint_denom:
@@ -80225,7 +80225,7 @@ definitions:
         type: string
         title: inflation rate
     title: Params defines mint module's parameters
-  petrihub.mint.QueryParamsResponse:
+  furyhub.mint.QueryParamsResponse:
     type: object
     properties:
       params:
