@@ -6,25 +6,25 @@
 
 | Name                                          | Description                                                                                         |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [issue](#fury-tx-nft-issue)                   | Specify the nft Denom (nft classification) and metadata JSON Schema to issue nft.                   |
-| [transfer-denom](#fury-tx-nft-transfer-denom) | The owner of the NFT classification can transfer the ownership of the NFT classification to others. |
-| [mint](#fury-tx-nft-mint)                     | Additional issuance (create) of specific nft of this type can be made.                              |
-| [edit](#fury-tx-nft-edit)                     | The metadata of the specified nft can be updated.                                                   |
-| [transfer](#fury-tx-nft-transfer)             | Transfer designated nft.                                                                            |
-| [burn](#fury-tx-nft-burn)                     | Destroy the created nft.                                                                            |
-| [supply](#fury-query-nft-supply)              | Query the total amount of nft according to Denom; accept the optional owner parameter.              |
-| [owner](#fury-query-nft-owner)                | Query all nft owned by an account; you can specify the Denom parameter.                             |
-| [collection](#fury-query-nft-collection)      | Query all nft according to Denom.                                                                   |
-| [denom](#fury-query-nft-denom)                | Query nft denom information based on Denom.                                                         |
-| [denoms](#fury-query-nft-denoms)              | Query the total amount of nft according to Denom; accept the optional owner parameter.              |
-| [token](#fury-query-nft-token)                | Query specific nft based on Denom and ID.                                                           |
+| [issue](#grid-tx-nft-issue)                   | Specify the nft Denom (nft classification) and metadata JSON Schema to issue nft.                   |
+| [transfer-denom](#grid-tx-nft-transfer-denom) | The owner of the NFT classification can transfer the ownership of the NFT classification to others. |
+| [mint](#grid-tx-nft-mint)                     | Additional issuance (create) of specific nft of this type can be made.                              |
+| [edit](#grid-tx-nft-edit)                     | The metadata of the specified nft can be updated.                                                   |
+| [transfer](#grid-tx-nft-transfer)             | Transfer designated nft.                                                                            |
+| [burn](#grid-tx-nft-burn)                     | Destroy the created nft.                                                                            |
+| [supply](#grid-query-nft-supply)              | Query the total amount of nft according to Denom; accept the optional owner parameter.              |
+| [owner](#grid-query-nft-owner)                | Query all nft owned by an account; you can specify the Denom parameter.                             |
+| [collection](#grid-query-nft-collection)      | Query all nft according to Denom.                                                                   |
+| [denom](#grid-query-nft-denom)                | Query nft denom information based on Denom.                                                         |
+| [denoms](#grid-query-nft-denoms)              | Query the total amount of nft according to Denom; accept the optional owner parameter.              |
+| [token](#grid-query-nft-token)                | Query specific nft based on Denom and ID.                                                           |
 
-## fury tx nft issue
+## grid tx nft issue
 
 Specify the nft Denom (nft classification) and metadata JSON Schema to issue nft.
 
 ```bash
-fury tx nft issue [denom-id] [flags]
+grid tx nft issue [denom-id] [flags]
 ```
 
 **Flags:**
@@ -39,20 +39,20 @@ fury tx nft issue [denom-id] [flags]
 | --mint-restricted   |          | This field indicates whether there are restrictions on the issuance of NFTs under this classification, true means that only Denom owners can issue NFTs under this classification, false means anyone can                   |             |
 | --update-restricted |          | This field indicates whether there are restrictions on updating NFTs under this classification, true means that no one under this classification can update the NFT, false means that only the owner of this NFT can update |             |
 
-## fury tx nft transfer-denom
+## grid tx nft transfer-denom
 
 The owner of the NFT classification can transfer the ownership of the NFT classification to others.
 
 ```bash
-fury tx nft transfer-denom [recipient] [denom-id]
+grid tx nft transfer-denom [recipient] [denom-id]
 ```
 
-## fury tx nft mint
+## grid tx nft mint
 
 Additional issuance (create) of specific nft of this type can be made.  
 
 ```bash
-fury tx nft mint [denomID] [tokenID] [flags]
+grid tx nft mint [denomID] [tokenID] [flags]
 ```
 
 **Flags:**
@@ -63,12 +63,12 @@ fury tx nft mint [denomID] [tokenID] [flags]
 | --recipient     |          | Receiver of the nft         |             |
 | --name          |          | The name of nft             |             |
 
-## fury tx nft edit
+## grid tx nft edit
 
 The metadata of the specified nft can be updated.
 
 ```bash
-fury tx nft edit [denomID] [tokenID] [flags]
+grid tx nft edit [denomID] [tokenID] [flags]
 ```
 
 **Flags:**
@@ -78,12 +78,12 @@ fury tx nft edit [denomID] [tokenID] [flags]
 | --uri           |          | URI of off-chain token data |             |
 | --name          |          | The name of nft             |             |
 
-## fury tx nft transfer
+## grid tx nft transfer
 
 Transfer designated nft.
 
 ```bash
-fury tx nft transfer [recipient] [denomID] [tokenID] [flags]
+grid tx nft transfer [recipient] [denomID] [tokenID] [flags]
 ```
 
 **Flags:**
@@ -93,52 +93,52 @@ fury tx nft transfer [recipient] [denomID] [tokenID] [flags]
 | --uri           |          | URI of off-chain token data |             |
 | --name          |          | The name of nft             |             |
 
-## fury tx nft burn
+## grid tx nft burn
 
 Destroy the created nft.
 
 ```bash
-fury tx nft burn [denomID] [tokenID] [flags]
+grid tx nft burn [denomID] [tokenID] [flags]
 ```
 
-## fury query nft
+## grid query nft
 
 Query nft
 
-### fury query nft supply
+### grid query nft supply
 
 ```bash
-fury query nft supply [denomID]
-fury query nft supply [denomID] --owner=<owner address>
+grid query nft supply [denomID]
+grid query nft supply [denomID] --owner=<owner address>
 ```
 
-### fury query nft owner
+### grid query nft owner
 
 ```bash
-fury query nft owner [owner address]
-fury query nft owner [owner address] --denom=<denomID>
+grid query nft owner [owner address]
+grid query nft owner [owner address] --denom=<denomID>
 ```
 
-### fury query nft collection
+### grid query nft collection
 
 ```bash
-fury query nft collection [denomID]
+grid query nft collection [denomID]
 ```
 
-### fury query nft denom
+### grid query nft denom
 
 ```bash
-fury query nft denom [denomID]
+grid query nft denom [denomID]
 ```
 
-### fury query nft denoms
+### grid query nft denoms
 
 ```bash
-fury query nft denoms
+grid query nft denoms
 ```
 
-### fury query nft token
+### grid query nft token
 
 ```bash
-fury query nft token [denomID] [tokenID]
+grid query nft token [denomID] [tokenID]
 ```

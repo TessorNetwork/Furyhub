@@ -1,12 +1,12 @@
 #
-# Build image: docker build -t tessornetwork/furyhub .
+# Build image: docker build -t gridironprotocol/gridiron .
 #
 FROM golang:1.18-alpine3.16 as builder
 
 # Set up dependencies
 ENV PACKAGES make gcc git libc-dev bash linux-headers eudev-dev
 
-WORKDIR /furyhub
+WORKDIR /GridIron
 
 # Add source files
 COPY . .
@@ -27,4 +27,4 @@ EXPOSE 26657
 # metrics port
 EXPOSE 26660
 
-COPY --from=builder /furyhub/build/ /usr/local/bin/
+COPY --from=builder /GridIron/build/ /usr/local/bin/

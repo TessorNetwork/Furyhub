@@ -3,10 +3,10 @@ version: "2.0"
 
 services:
   node:
-    image: docker.io/nimrostafarian/tessornetwork:furyhub
+    image: docker.io/nimrostafarian/gridironprotocol:GridIron
     env:
       - MONIKER=node_1
-      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/irisnet/chain.json
+      - CHAIN_JSON=https://raw.githubusercontent.com/cosmos/chain-registry/master/gridironprotocol/chain.json
     expose:
       - port: 26657
         as: 80

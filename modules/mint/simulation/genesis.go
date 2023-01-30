@@ -10,7 +10,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/tessornetwork/furyhub/modules/mint/types"
+	"github.com/gridironprotocol/gridiron/modules/mint/types"
 )
 
 // Simulation parameter constants

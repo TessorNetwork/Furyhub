@@ -9,7 +9,7 @@ import (
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/tessornetwork/furyhub/modules/guardian/types"
+	"github.com/gridironprotocol/gridiron/modules/guardian/types"
 )
 
 // Keeper of the guardian store

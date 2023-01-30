@@ -9,7 +9,7 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
 
-	"github.com/tessornetwork/furyhub/modules/mint/types"
+	"github.com/gridironprotocol/gridiron/modules/mint/types"
 )
 
 // ParamChanges defines the parameters that can be modified by param change proposals

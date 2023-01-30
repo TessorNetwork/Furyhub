@@ -33,40 +33,40 @@ import (
 	icatypes "github.com/cosmos/ibc-go/v5/modules/apps/27-interchain-accounts/types"
 	ibchost "github.com/cosmos/ibc-go/v5/modules/core/24-host"
 
-	coinswaptypes "github.com/irisnet/irismod/modules/coinswap/types"
-	farmtypes "github.com/irisnet/irismod/modules/farm/types"
-	"github.com/irisnet/irismod/modules/htlc"
-	htlctypes "github.com/irisnet/irismod/modules/htlc/types"
-	mttypes "github.com/irisnet/irismod/modules/mt/types"
-	nftmodule "github.com/irisnet/irismod/modules/nft/module"
-	nfttypes "github.com/irisnet/irismod/modules/nft/types"
-	"github.com/irisnet/irismod/modules/oracle"
-	oracletypes "github.com/irisnet/irismod/modules/oracle/types"
-	"github.com/irisnet/irismod/modules/random"
-	randomtypes "github.com/irisnet/irismod/modules/random/types"
-	"github.com/irisnet/irismod/modules/record"
-	recordtypes "github.com/irisnet/irismod/modules/record/types"
-	"github.com/irisnet/irismod/modules/service"
-	servicetypes "github.com/irisnet/irismod/modules/service/types"
-	"github.com/irisnet/irismod/modules/token"
-	tokentypes "github.com/irisnet/irismod/modules/token/types"
+	coinswaptypes "github.com/gridironprotocol/irismod/modules/coinswap/types"
+	farmtypes "github.com/gridironprotocol/irismod/modules/farm/types"
+	"github.com/gridironprotocol/irismod/modules/htlc"
+	htlctypes "github.com/gridironprotocol/irismod/modules/htlc/types"
+	mttypes "github.com/gridironprotocol/irismod/modules/mt/types"
+	nftmodule "github.com/gridironprotocol/irismod/modules/nft/module"
+	nfttypes "github.com/gridironprotocol/irismod/modules/nft/types"
+	"github.com/gridironprotocol/irismod/modules/oracle"
+	oracletypes "github.com/gridironprotocol/irismod/modules/oracle/types"
+	"github.com/gridironprotocol/irismod/modules/random"
+	randomtypes "github.com/gridironprotocol/irismod/modules/random/types"
+	"github.com/gridironprotocol/irismod/modules/record"
+	recordtypes "github.com/gridironprotocol/irismod/modules/record/types"
+	"github.com/gridironprotocol/irismod/modules/service"
+	servicetypes "github.com/gridironprotocol/irismod/modules/service/types"
+	"github.com/gridironprotocol/irismod/modules/token"
+	tokentypes "github.com/gridironprotocol/irismod/modules/token/types"
 
 	tibcmttypes "github.com/bianjieai/tibc-go/modules/tibc/apps/mt_transfer/types"
 	tibcnfttypes "github.com/bianjieai/tibc-go/modules/tibc/apps/nft_transfer/types"
 	tibcclienttypes "github.com/bianjieai/tibc-go/modules/tibc/core/02-client/types"
 	tibchost "github.com/bianjieai/tibc-go/modules/tibc/core/24-host"
 
-	migratehtlc "github.com/tessornetwork/furyhub/migrate/htlc"
-	migrateservice "github.com/tessornetwork/furyhub/migrate/service"
-	migratetibc "github.com/tessornetwork/furyhub/migrate/tibc"
-	"github.com/tessornetwork/furyhub/modules/guardian"
-	guardiantypes "github.com/tessornetwork/furyhub/modules/guardian/types"
-	"github.com/tessornetwork/furyhub/modules/mint"
-	minttypes "github.com/tessornetwork/furyhub/modules/mint/types"
+	migratehtlc "github.com/gridironprotocol/gridiron/migrate/htlc"
+	migrateservice "github.com/gridironprotocol/gridiron/migrate/service"
+	migratetibc "github.com/gridironprotocol/gridiron/migrate/tibc"
+	"github.com/gridironprotocol/gridiron/modules/guardian"
+	guardiantypes "github.com/gridironprotocol/gridiron/modules/guardian/types"
+	"github.com/gridironprotocol/gridiron/modules/mint"
+	minttypes "github.com/gridironprotocol/gridiron/modules/mint/types"
 )
 
 // RegisterUpgradePlan register a handler of upgrade plan
-func (app *FuryApp) RegisterUpgradePlan(cfg module.Configurator) {
+func (app *GridApp) RegisterUpgradePlan(cfg module.Configurator) {
 	app.RegisterUpgradeHandler(
 		"v1.1", &store.StoreUpgrades{},
 		func(ctx sdk.Context, plan sdkupgrade.Plan, fromVM module.VersionMap) (module.VersionMap, error) {
@@ -96,7 +96,7 @@ func (app *FuryApp) RegisterUpgradePlan(cfg module.Configurator) {
 				}},
 			)
 			tibcclienttypes.SetDefaultGenesisState(tibcclienttypes.GenesisState{
-				NativeChainName: "furyhub-mainnet",
+				NativeChainName: "GridIron-mainnet",
 			})
 
 			if err := migratetibc.CreateClient(ctx,

@@ -10,7 +10,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/version"
 
-	"github.com/tessornetwork/furyhub/modules/guardian/types"
+	"github.com/gridironprotocol/gridiron/modules/guardian/types"
 )
 
 // GetQueryCmd returns the cli query commands for the guardian module.

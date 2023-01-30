@@ -44694,10 +44694,10 @@ paths:
                         }
       tags:
         - Query
-  /furyhub/guardian/supers:
+  /GridIron/guardian/supers:
     get:
       summary: Supers returns all Supers
-      operationId: FuryhubGuardianSupers
+      operationId: GridIronGuardianSupers
       responses:
         '200':
           description: A successful response.
@@ -44821,10 +44821,10 @@ paths:
           type: boolean
       tags:
         - Query
-  /furyhub/mint/params:
+  /GridIron/mint/params:
     get:
       summary: Params queries the mint parameters
-      operationId: FuryhubMintParams
+      operationId: GridIronMintParams
       responses:
         '200':
           description: A successful response.
@@ -80126,7 +80126,7 @@ definitions:
             NOTE: The amount field is an Int which implements the custom method
             signatures required by gogoproto.
     title: QueryTotalBurnResponse is response type for the Query/TotalBurn RPC method
-  furyhub.guardian.AccountType:
+  GridIron.guardian.AccountType:
     type: string
     enum:
       - GENESIS
@@ -80136,13 +80136,13 @@ definitions:
       - GENESIS: GENESIS defines a genesis account type
        - ORDINARY: ORDINARY defines a ordinary account type
     title: AccountType defines the super account type
-  furyhub.guardian.MsgAddSuperResponse:
+  GridIron.guardian.MsgAddSuperResponse:
     type: object
     title: MsgAddSuperResponse defines the Msg/AddSuper response type
-  furyhub.guardian.MsgDeleteSuperResponse:
+  GridIron.guardian.MsgDeleteSuperResponse:
     type: object
     title: MsgDeleteSuperResponse defines the Msg/DeleteSuper response type
-  furyhub.guardian.QuerySupersResponse:
+  GridIron.guardian.QuerySupersResponse:
     type: object
     properties:
       supers:
@@ -80195,7 +80195,7 @@ definitions:
 
           request message has used PageRequest
     title: QuerySupersResponse is response type for the Query/Supers RPC method
-  furyhub.guardian.Super:
+  GridIron.guardian.Super:
     type: object
     properties:
       description:
@@ -80215,7 +80215,7 @@ definitions:
       added_by:
         type: string
     title: Super defines the super standard
-  furyhub.mint.Params:
+  GridIron.mint.Params:
     type: object
     properties:
       mint_denom:
@@ -80225,7 +80225,7 @@ definitions:
         type: string
         title: inflation rate
     title: Params defines mint module's parameters
-  furyhub.mint.QueryParamsResponse:
+  GridIron.mint.QueryParamsResponse:
     type: object
     properties:
       params:

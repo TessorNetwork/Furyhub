@@ -69,7 +69,7 @@ func (m *GenesisState) GetSupers() []Super {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "furyhub.guardian.GenesisState")
+	proto.RegisterType((*GenesisState)(nil), "GridIron.guardian.GenesisState")
 }
 
 func init() { proto.RegisterFile("guardian/genesis.proto", fileDescriptor_5203106ad1456439) }

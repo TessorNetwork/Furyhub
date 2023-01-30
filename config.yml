@@ -1,7 +1,7 @@
 version: 1
 build:
-  main: ./cmd/fury
-  binary: fury
+  main: ./cmd/grid
+  binary: grid
   proto:
     path: proto
     third_party_paths:

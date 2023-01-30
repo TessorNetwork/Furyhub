@@ -10,7 +10,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/testutil"
 	clitestutil "github.com/cosmos/cosmos-sdk/testutil/cli"
 
-	guardiancli "github.com/tessornetwork/furyhub/modules/guardian/client/cli"
+	guardiancli "github.com/gridironprotocol/gridiron/modules/guardian/client/cli"
 )
 
 // MsgRedelegateExec creates a redelegate message.

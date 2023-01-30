@@ -6,40 +6,40 @@ This module provides the basic functionalities for [Governance](../features/gove
 
 | Name                                            | Description                                                       |
 | ----------------------------------------------- | ----------------------------------------------------------------- |
-| [proposal](#fury-query-gov-proposal)            | Query details of a single proposal                                |
-| [proposals](#fury-query-gov-proposals)          | Query proposals with optional filter                              |
-| [vote](#fury-query-gov-vote)                    | Query details of a single vote                                    |
-| [votes](#fury-query-gov-votes)                  | Query votes on a proposal                                         |
-| [deposit](#fury-query-gov-deposit)              | Query details of a deposit                                        |
-| [deposits](#fury-query-gov-deposits)            | Query deposits on a proposal                                      |
-| [tally](#fury-query-gov-tally)                  | Get the tally of a proposal vote                                  |
-| [param](#fury-query-gov-param)                  | Query the parameters (voting                                      |
-| [params](#fury-query-gov-params)                | Query the parameters of the governance process                    |
-| [proposer](#fury-query-gov-proposer)            | Query which address proposed a proposal with a given ID.          |
-| [submit-proposal](#fury-tx-gov-submit-proposal) | Submit a proposal along with an initial deposit                   |
-| [deposit](#fury-tx-gov-deposit)                 | Deposit tokens for an active proposal                             |
-| [vote](#fury-tx-gov-vote)                       | Vote for an active proposal, options: yes/no/no_with_veto/abstain |
+| [proposal](#grid-query-gov-proposal)            | Query details of a single proposal                                |
+| [proposals](#grid-query-gov-proposals)          | Query proposals with optional filter                              |
+| [vote](#grid-query-gov-vote)                    | Query details of a single vote                                    |
+| [votes](#grid-query-gov-votes)                  | Query votes on a proposal                                         |
+| [deposit](#grid-query-gov-deposit)              | Query details of a deposit                                        |
+| [deposits](#grid-query-gov-deposits)            | Query deposits on a proposal                                      |
+| [tally](#grid-query-gov-tally)                  | Get the tally of a proposal vote                                  |
+| [param](#grid-query-gov-param)                  | Query the parameters (voting                                      |
+| [params](#grid-query-gov-params)                | Query the parameters of the governance process                    |
+| [proposer](#grid-query-gov-proposer)            | Query which address proposed a proposal with a given ID.          |
+| [submit-proposal](#grid-tx-gov-submit-proposal) | Submit a proposal along with an initial deposit                   |
+| [deposit](#grid-tx-gov-deposit)                 | Deposit tokens for an active proposal                             |
+| [vote](#grid-tx-gov-vote)                       | Vote for an active proposal, options: yes/no/no_with_veto/abstain |
 
-## fury query gov proposal
+## grid query gov proposal
 
 Query details of a proposal.
 
 ```bash
-fury query gov proposal [proposal-id] [flags]
+grid query gov proposal [proposal-id] [flags]
 ```
 
 ### Query a proposal
 
 ```bash
-fury query gov proposal <proposal-id>
+grid query gov proposal <proposal-id>
 ```
 
-## fury query gov proposals
+## grid query gov proposals
 
 Query proposals with optional filter.
 
 ```bash
-fury query gov proposals [flags]
+grid query gov proposals [flags]
 ```
 
 **Flags:**
@@ -54,129 +54,129 @@ fury query gov proposals [flags]
 ### Query all proposals
 
 ```bash
-fury query gov proposals
+grid query gov proposals
 ```
 
 ### Query proposals by conditions
 
 ```bash
-fury query gov proposals --limit=3 --status=Passed --depositor=<iaa...>
+grid query gov proposals --limit=3 --status=Passed --depositor=<iaa...>
 ```
 
-## fury query gov vote
+## grid query gov vote
 
 Query details of a single vote.
 
 ```bash
-fury query gov vote [proposal-id] [voter-addr] [flags]
+grid query gov vote [proposal-id] [voter-addr] [flags]
 ```
 
 ### Query a vote
 
 ```bash
-fury query gov vote <proposal-id> <iaa...>
+grid query gov vote <proposal-id> <iaa...>
 ```
 
-## fury query gov votes
+## grid query gov votes
 
 Query votes on a proposal.
 
 ```bash
-fury query gov votes [proposal-id] [flags]
+grid query gov votes [proposal-id] [flags]
 ```
 
 ### Query all votes of a proposal
 
 ```bash
-fury query gov votes <proposal-id>
+grid query gov votes <proposal-id>
 ```
 
-## fury query gov deposit
+## grid query gov deposit
 
 Query details for a single proposal deposit on a proposal by its identifier.
 
 ```bash
-fury query gov deposit [proposal-id] [depositer-addr] [flags]
+grid query gov deposit [proposal-id] [depositer-addr] [flags]
 ```
 
 ### Query a deposit of a proposal
 
 ```bash
-fury query gov deposit <proposal-id> <iaa...>
+grid query gov deposit <proposal-id> <iaa...>
 ```
 
-## fury query gov deposits
+## grid query gov deposits
 
 Query details for all deposits on a proposal.
 
 ```bash
-fury query gov deposits [proposal-id] [flags]
+grid query gov deposits [proposal-id] [flags]
 ```
 
 ### Query all deposits of a proposal
 
 ```bash
-fury query gov deposits <proposal-id>
+grid query gov deposits <proposal-id>
 ```
 
-## fury query gov tally
+## grid query gov tally
 
-Query tally of votes on a proposal. You can find the proposal-id by running "fury query gov proposals".
+Query tally of votes on a proposal. You can find the proposal-id by running "grid query gov proposals".
 
 ```bash
-fury query gov tally [proposal-id] [flags]
+grid query gov tally [proposal-id] [flags]
 ```
 
 ### Query the statistics of a proposal
 
 ```bash
-fury query gov tally <proposal-id>
+grid query gov tally <proposal-id>
 ```
 
-## fury query gov param
+## grid query gov param
 
 Query the parameters (voting|tallying|deposit) of the governance process.
 
 ```bash
-fury query gov param [param-type] [flags]
+grid query gov param [param-type] [flags]
 ```
 
 Example:
 
 ```bash
-> fury query gov param voting
-> fury query gov param tallying
-> fury query gov param deposit
+> grid query gov param voting
+> grid query gov param tallying
+> grid query gov param deposit
 ```
 
-## fury query gov params
+## grid query gov params
 
 Query the all the parameters for the governance process.
 
 ```bash
-fury query gov params [flags]
+grid query gov params [flags]
 ```
 
-## fury query gov proposer
+## grid query gov proposer
 
 Query which address proposed a proposal with a given ID.
 
 ```bash
-fury query gov proposer [proposal-id] [flags]
+grid query gov proposer [proposal-id] [flags]
 ```
 
-## fury tx gov submit-proposal
+## grid tx gov submit-proposal
 
 Submit a proposal along with an initial deposit. Proposal title, description, type and deposit can be given directly or through a proposal JSON file.
 Available Commands:  `community-pool-spend`, `param-change`, `software-upgrade`, `cancel-software-upgrade` .
 
-### fury tx gov submit-proposal community-pool-spend
+### grid tx gov submit-proposal community-pool-spend
 
 Submit a community pool spend proposal along with an initial deposit.
 The proposal details must be supplied via a JSON file.
 
 ```bash
-fury tx gov submit-proposal community-pool-spend <path/to/proposal.json> --from=<key_or_address>
+grid tx gov submit-proposal community-pool-spend <path/to/proposal.json> --from=<key_or_address>
 ```
 
 Where proposal.json contains:
@@ -186,12 +186,12 @@ Where proposal.json contains:
     "title": "Community Pool Spend",
     "description": "Pay me some Atoms!",
     "recipient": "iaa1mjk4p68mmulwla3x5uzlgjwsc3zrms448rel3q",
-    "amount": "1000ufury",
-    "deposit": "1000ufury"
+    "amount": "1000ugrid",
+    "deposit": "1000ugrid"
 }
 ```
 
-### fury tx gov submit-proposal param-change
+### grid tx gov submit-proposal param-change
 
 Submit a parameter proposal along with an initial deposit.
 The proposal details must be supplied via a JSON file. For values that contains objects, only non-empty fields will be updated.
@@ -201,7 +201,7 @@ IMPORTANT: Currently parameter changes are evaluated but not validated, so it is
 Proper vetting of a parameter change proposal should prevent this from happening (no deposits should occur during the governance process), but it should be noted regardless.
 
 ```bash
-fury tx gov submit-proposal param-change <path/to/proposal.json> --from=<key_or_address>
+grid tx gov submit-proposal param-change <path/to/proposal.json> --from=<key_or_address>
 ```
 
 Where proposal.json contains:
@@ -217,17 +217,17 @@ Where proposal.json contains:
         "value": 105
         }
     ],
-    "deposit": "1000ufury"
+    "deposit": "1000ugrid"
 }
 ```
 
-### fury tx gov submit-proposal software-upgrade
+### grid tx gov submit-proposal software-upgrade
 
 Submit a software upgrade along with an initial deposit.
 Please specify a unique name and height OR time for the upgrade to take effect.
 
 ```bash
-fury tx gov submit-proposal software-upgrade [name] (--upgrade-height [height] | --upgrade-time [time]) (--upgrade-info [info]) [flags]
+grid tx gov submit-proposal software-upgrade [name] (--upgrade-height [height] | --upgrade-time [time]) (--upgrade-info [info]) [flags]
 ```
 
 **Flags:**
@@ -241,12 +241,12 @@ fury tx gov submit-proposal software-upgrade [name] (--upgrade-height [height] |
 | --time           | string |          |         | The time at which the upgrade must happen (not to be used together with --upgrade-height) |
 | --info           | string |          |         | Optional info for the planned upgrade such as commit hash, etc.                           |
 
-### fury tx gov submit-proposal cancel-software-upgrade
+### grid tx gov submit-proposal cancel-software-upgrade
 
 Cancel a software upgrade along with an initial deposit.
 
 ```bash
-fury tx gov submit-proposal cancel-software-upgrade [flags]
+grid tx gov submit-proposal cancel-software-upgrade [flags]
 ```
 
 **Flags:**
@@ -257,31 +257,31 @@ fury tx gov submit-proposal cancel-software-upgrade [flags]
 | --title         | string | Yes      |         | Title of proposal       |
 | --description   | string | Yes      |         | Description of proposal |
 
-## fury tx gov deposit
+## grid tx gov deposit
 
-Submit a deposit for an active proposal. You can find the proposal-id by running "fury query gov proposals".
+Submit a deposit for an active proposal. You can find the proposal-id by running "grid query gov proposals".
 
 ```bash
-fury tx gov deposit [proposal-id] [deposit] [flags]
+grid tx gov deposit [proposal-id] [deposit] [flags]
 ```
 
 ### Deposit for an active proposal
 
 ```bash
-fury tx gov deposit [proposal-id] [deposit]
+grid tx gov deposit [proposal-id] [deposit]
 ```
 
-## fury tx gov vote
+## grid tx gov vote
 
-Submit a vote for an active proposal. You can find the proposal-id by running "fury query gov proposals".
+Submit a vote for an active proposal. You can find the proposal-id by running "grid query gov proposals".
 Vote for an active proposal, options: yes/no/no_with_veto/abstain.
 
 ```bash
-fury tx gov vote [proposal-id] [option] [flags]
+grid tx gov vote [proposal-id] [option] [flags]
 ```
 
 ### Vote for an active proposal
 
 ```bash
-fury tx gov vote <proposal-id> <option> --from=<key-name> --fees=0.3fury
+grid tx gov vote <proposal-id> <option> --from=<key-name> --fees=0.3grid
 ```

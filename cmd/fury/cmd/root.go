@@ -33,8 +33,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
-	"github.com/tessornetwork/furyhub/app"
-	"github.com/tessornetwork/furyhub/app/params"
+	"github.com/gridironprotocol/gridiron/app"
+	"github.com/gridironprotocol/gridiron/app/params"
 )
 
 // NewRootCmd creates a new root command for simd. It is called once in the
@@ -53,8 +53,8 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 		WithViper("")
 
 	rootCmd := &cobra.Command{
-		Use:   "fury",
-		Short: "FURY Hub app command",
+		Use:   "grid",
+		Short: "GRID Hub app command",
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			initClientCtx, err := client.ReadPersistentCommandFlags(initClientCtx, cmd.Flags())
 			if err != nil {
@@ -72,9 +72,9 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 
 			converter.handlePreRun(cmd, args)
 
-			customTemplate, customFURYhubConfig := initAppConfig()
+			customTemplate, customGRIDhubConfig := initAppConfig()
 			customTMConfig := initTendermintConfig()
-			return server.InterceptConfigsPreRunHandler(cmd, customTemplate, customFURYhubConfig, customTMConfig)
+			return server.InterceptConfigsPreRunHandler(cmd, customTemplate, customGRIDhubConfig, customTMConfig)
 		},
 		PersistentPostRun: func(cmd *cobra.Command, _ []string) {
 			converter.handlePostRun(cmd)
@@ -230,7 +230,7 @@ func (ac appCreator) newApp(logger log.Logger, db dbm.DB, traceStore io.Writer, 
 		cast.ToUint32(appOpts.Get(server.FlagStateSyncSnapshotKeepRecent)),
 	)
 
-	return app.NewFuryApp(
+	return app.NewGridApp(
 		logger, db, traceStore, true, skipUpgradeHeights,
 		cast.ToString(appOpts.Get(flags.FlagHome)),
 		cast.ToUint(appOpts.Get(server.FlagInvCheckPeriod)),
@@ -250,7 +250,7 @@ func (ac appCreator) newApp(logger log.Logger, db dbm.DB, traceStore io.Writer, 
 	)
 }
 
-// createFuryappAndExport creates a new furyapp (optionally at a given height) and exports state.
+// createGridappAndExport creates a new gridapp (optionally at a given height) and exports state.
 func (ac appCreator) appExport(
 	logger log.Logger,
 	db dbm.DB,
@@ -272,7 +272,7 @@ func (ac appCreator) appExport(
 		loadLatest = true
 	}
 
-	furyApp := app.NewFuryApp(
+	gridApp := app.NewGridApp(
 		logger,
 		db,
 		traceStore,
@@ -285,10 +285,10 @@ func (ac appCreator) appExport(
 	)
 
 	if height != -1 {
-		if err := furyApp.LoadHeight(height); err != nil {
+		if err := gridApp.LoadHeight(height); err != nil {
 			return servertypes.ExportedApp{}, err
 		}
 	}
 
-	return furyApp.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs)
+	return gridApp.ExportAppStateAndValidators(forZeroHeight, jailAllowedAddrs)
 }

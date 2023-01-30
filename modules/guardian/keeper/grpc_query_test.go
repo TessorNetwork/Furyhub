@@ -6,7 +6,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 
-	"github.com/tessornetwork/furyhub/modules/guardian/types"
+	"github.com/gridironprotocol/gridiron/modules/guardian/types"
 )
 
 func (suite *KeeperTestSuite) TestGRPCQuerySupers() {

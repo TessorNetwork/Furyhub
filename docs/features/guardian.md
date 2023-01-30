@@ -2,7 +2,7 @@
 
 ## Summary
 
-FURYhub introduce two types of privileged system user controlled by foundations, the profiler and the trustee.
+GRIDhub introduce two types of privileged system user controlled by foundations, the profiler and the trustee.
 
 * Profiler privileges
     1. Submit software upgrade/halt proposal by governance.
@@ -23,13 +23,13 @@ FURYhub introduce two types of privileged system user controlled by foundations,
     Add Profiler (Genesis Profiler account only)
 
     ```bash
-    fury tx guardian add-profiler --address=<profiler-address> --description=<profiler-description> --chain-id=furyhub --from=<key-name> --fees=0.3fury
+    grid tx guardian add-profiler --address=<profiler-address> --description=<profiler-description> --chain-id=GridIron --from=<key-name> --fees=0.3grid
     ```
 
     Add Trustee (Genesis Trustee account only)
 
     ```bash
-    fury tx guardian add-trustee --address=<trustee-address> --description=<trustee-description> --chain-id=furyhub --from=<key-name> --fees=0.3fury
+    grid tx guardian add-trustee --address=<trustee-address> --description=<trustee-description> --chain-id=GridIron --from=<key-name> --fees=0.3grid
     ```
 
 2. Query Profiler and Trustee list
@@ -37,13 +37,13 @@ FURYhub introduce two types of privileged system user controlled by foundations,
     Query Profiler list
 
     ```bash
-    fury q guardian profilers
+    grid q guardian profilers
     ```
 
     Query Trustee list
 
     ```bash
-    fury q guardian trustees
+    grid q guardian trustees
     ```
 
 3. Profiler submit software upgrade/halt proposal
@@ -55,7 +55,7 @@ FURYhub introduce two types of privileged system user controlled by foundations,
     Service fee exempted
 
     ```bash
-    fury tx service call --def-chain-id=<def-chain-id> --service-name=<service-name> --method-id=<method-id> --bind-chain-id=<bind-chain-id> --provider=<provider-address> --service-fee=1fury --request-data=<request-data> --chain-id=furyhub --from=<key-name> --fees=0.3fury --profiling=true
+    grid tx service call --def-chain-id=<def-chain-id> --service-name=<service-name> --method-id=<method-id> --bind-chain-id=<bind-chain-id> --provider=<provider-address> --service-fee=1grid --request-data=<request-data> --chain-id=GridIron --from=<key-name> --fees=0.3grid --profiling=true
     ```
 
 5. Trustee to be the destination address of `CommunityTaxUsage` proposal
@@ -67,11 +67,11 @@ FURYhub introduce two types of privileged system user controlled by foundations,
     Delete Profiler (Genesis Trustee account only)
 
     ```bash
-    fury tx guardian delete-profiler --chain-id=furyhub --from=<key-name> --fees=0.3fury --address=<profiler-address>
+    grid tx guardian delete-profiler --chain-id=GridIron --from=<key-name> --fees=0.3grid --address=<profiler-address>
     ```
 
     Delete Trustee (Genesis Trustee account only)
 
     ```bash
-    fury tx guardian delete-trustee --chain-id=furyhub --from=<key-name> --fees=0.3fury --address=<trustee-address>
+    grid tx guardian delete-trustee --chain-id=GridIron --from=<key-name> --fees=0.3grid --address=<trustee-address>
     ```

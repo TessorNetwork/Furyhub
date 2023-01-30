@@ -5,10 +5,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/ante"
 	bankkeeper "github.com/cosmos/cosmos-sdk/x/bank/keeper"
 
-	guardiankeeper "github.com/tessornetwork/furyhub/modules/guardian/keeper"
+	guardiankeeper "github.com/gridironprotocol/gridiron/modules/guardian/keeper"
 
-	oraclekeeper "github.com/irisnet/irismod/modules/oracle/keeper"
-	tokenkeeper "github.com/irisnet/irismod/modules/token/keeper"
+	oraclekeeper "github.com/gridironprotocol/irismod/modules/oracle/keeper"
+	tokenkeeper "github.com/gridironprotocol/irismod/modules/token/keeper"
 )
 
 // HandlerOptions extend the SDK's AnteHandler options by requiring the IBC

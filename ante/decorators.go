@@ -8,10 +8,10 @@ import (
 	govv1 "github.com/cosmos/cosmos-sdk/x/gov/types/v1"
 	ibctransfertypes "github.com/cosmos/ibc-go/v5/modules/apps/transfer/types"
 
-	coinswaptypes "github.com/irisnet/irismod/modules/coinswap/types"
-	servicetypes "github.com/irisnet/irismod/modules/service/types"
-	tokenkeeper "github.com/irisnet/irismod/modules/token/keeper"
-	tokentypes "github.com/irisnet/irismod/modules/token/types"
+	coinswaptypes "github.com/gridironprotocol/irismod/modules/coinswap/types"
+	servicetypes "github.com/gridironprotocol/irismod/modules/service/types"
+	tokenkeeper "github.com/gridironprotocol/irismod/modules/token/keeper"
+	tokentypes "github.com/gridironprotocol/irismod/modules/token/types"
 )
 
 // ValidateTokenDecorator is responsible for restricting the token participation of the swap prefix

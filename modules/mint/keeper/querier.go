@@ -7,7 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/tessornetwork/furyhub/modules/mint/types"
+	"github.com/gridironprotocol/gridiron/modules/mint/types"
 )
 
 // NewQuerier returns a minting Querier handler.

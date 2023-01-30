@@ -216,10 +216,10 @@ func (m *MsgDeleteSuperResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_MsgDeleteSuperResponse proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*MsgAddSuper)(nil), "furyhub.guardian.MsgAddSuper")
-	proto.RegisterType((*MsgAddSuperResponse)(nil), "furyhub.guardian.MsgAddSuperResponse")
-	proto.RegisterType((*MsgDeleteSuper)(nil), "furyhub.guardian.MsgDeleteSuper")
-	proto.RegisterType((*MsgDeleteSuperResponse)(nil), "furyhub.guardian.MsgDeleteSuperResponse")
+	proto.RegisterType((*MsgAddSuper)(nil), "GridIron.guardian.MsgAddSuper")
+	proto.RegisterType((*MsgAddSuperResponse)(nil), "GridIron.guardian.MsgAddSuperResponse")
+	proto.RegisterType((*MsgDeleteSuper)(nil), "GridIron.guardian.MsgDeleteSuper")
+	proto.RegisterType((*MsgDeleteSuperResponse)(nil), "GridIron.guardian.MsgDeleteSuperResponse")
 }
 
 func init() { proto.RegisterFile("guardian/tx.proto", fileDescriptor_b62288115d705ce8) }
@@ -276,7 +276,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) AddSuper(ctx context.Context, in *MsgAddSuper, opts ...grpc.CallOption) (*MsgAddSuperResponse, error) {
 	out := new(MsgAddSuperResponse)
-	err := c.cc.Invoke(ctx, "/furyhub.guardian.Msg/AddSuper", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/GridIron.guardian.Msg/AddSuper", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -285,7 +285,7 @@ func (c *msgClient) AddSuper(ctx context.Context, in *MsgAddSuper, opts ...grpc.
 
 func (c *msgClient) DeleteSuper(ctx context.Context, in *MsgDeleteSuper, opts ...grpc.CallOption) (*MsgDeleteSuperResponse, error) {
 	out := new(MsgDeleteSuperResponse)
-	err := c.cc.Invoke(ctx, "/furyhub.guardian.Msg/DeleteSuper", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/GridIron.guardian.Msg/DeleteSuper", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -325,7 +325,7 @@ func _Msg_AddSuper_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/furyhub.guardian.Msg/AddSuper",
+		FullMethod: "/GridIron.guardian.Msg/AddSuper",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).AddSuper(ctx, req.(*MsgAddSuper))
@@ -343,7 +343,7 @@ func _Msg_DeleteSuper_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/furyhub.guardian.Msg/DeleteSuper",
+		FullMethod: "/GridIron.guardian.Msg/DeleteSuper",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).DeleteSuper(ctx, req.(*MsgDeleteSuper))
@@ -352,7 +352,7 @@ func _Msg_DeleteSuper_Handler(srv interface{}, ctx context.Context, dec func(int
 }
 
 var _Msg_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "furyhub.guardian.Msg",
+	ServiceName: "GridIron.guardian.Msg",
 	HandlerType: (*MsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

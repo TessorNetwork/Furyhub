@@ -1,10 +1,10 @@
 {
   "$schema": "../chain.schema.json",
-  "chain_name": "fury",
+  "chain_name": "grid",
   "status": "live",
   "network_type": "mainnet",
-  "pretty_name": "FURYnet",
-  "chain_id": "irishub-1",
+  "pretty_name": "GRIDnet",
+  "chain_id": "gridiron-1",
   "bech32_prefix": "iaa",
   "daemon_name": "iris",
   "node_home": "$HOME/.iris",
@@ -15,36 +15,36 @@
   "fees": {
     "fee_tokens": [
       {
-        "denom": "uiris"
+        "denom": "ugrid"
       }
     ]
   },
   "staking": {
     "staking_tokens": [
       {
-        "denom": "uiris"
+        "denom": "ugrid"
       }
     ]
   },
   "codebase": {
-    "git_repo": "https://github.com/irisnet/irishub",
+    "git_repo": "https://github.com/gridironprotocol/gridiron",
     "recommended_version": "v1.3.0",
     "compatible_versions": [
       "v1.3.0"
     ],
     "genesis": {
-      "genesis_url": "https://raw.githubusercontent.com/irisnet/mainnet/master/config/genesis.json"
+      "genesis_url": "https://raw.githubusercontent.com/gridironprotocol/mainnet/master/config/genesis.json"
     }
   },
   "peers": {
     "seeds": [
       {
         "id": "6a6de770deaa4b8c061dffd82e9c7f4d40c2165d",
-        "address": "seed-1.mainnet.irisnet.org:26656"
+        "address": "seed-1.mainnet.gridironprotocol.org:26656"
       },
       {
         "id": "a17d7923293203c64ba75723db4d5f28e642f469",
-        "address": "seed-2.mainnet.irisnet.org:26656"
+        "address": "seed-2.mainnet.gridironprotocol.org:26656"
       },
       {
         "id": "e1b058e5cfa2b836ddaa496b10911da62dcf182e",
@@ -117,7 +117,7 @@
         "provider": "chainapsis"
       },
       {
-        "address": "https://rpc-irisnet-ia.cosmosia.notional.ventures/",
+        "address": "https://rpc-gridironprotocol-ia.cosmosia.notional.ventures/",
         "provider": "Notional"
       }
     ],
@@ -127,13 +127,13 @@
         "provider": "chainapsis"
       },
       {
-        "address": "https://api-irisnet-ia.cosmosia.notional.ventures/",
+        "address": "https://api-gridironprotocol-ia.cosmosia.notional.ventures/",
         "provider": "Notional"
       }
     ],
     "grpc": [
       {
-        "address": "grpc-irisnet-ia.cosmosia.notional.ventures:443",
+        "address": "grpc-gridironprotocol-ia.cosmosia.notional.ventures:443",
         "provider": "Notional"
       }
     ]
@@ -141,9 +141,9 @@
   "explorers": [
     {
       "kind": "EZStaking Tools",
-      "url": "https://ezstaking.tools/irisnet",
-      "tx_page": "https://ezstaking.tools/irisnet/txs/${txHash}",
-      "account_page": "https://ezstaking.tools/irisnet/account/${accountAddress}"
+      "url": "https://ezstaking.tools/gridironprotocol",
+      "tx_page": "https://ezstaking.tools/gridironprotocol/txs/${txHash}",
+      "account_page": "https://ezstaking.tools/gridironprotocol/account/${accountAddress}"
     },
     {
       "kind": "mintscan",

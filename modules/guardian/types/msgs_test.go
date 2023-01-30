@@ -10,7 +10,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/tessornetwork/furyhub/address"
+	"github.com/gridironprotocol/gridiron/address"
 )
 
 // nolint: deadcode unused
@@ -51,7 +51,7 @@ func TestMsgAddSuperType(t *testing.T) {
 func TestMsgAddSuperGetSignBytes(t *testing.T) {
 	msg := NewMsgAddSuper(description, testAddr, sender)
 	res := msg.GetSignBytes()
-	expected := `{"type":"furyhub/guardian/MsgAddSuper","value":{"added_by":"did:fury:aa1pgm8hyk0pvphmlvfjc8wsvk4daluz5tg3clxjv","address":"did:fury:aa1n7rdpqvgf37ktx30a2sv2kkszk3m7ncmz086cd","description":"description"}}`
+	expected := `{"type":"GridIron/guardian/MsgAddSuper","value":{"added_by":"did:grid:aa1pgm8hyk0pvphmlvfjc8wsvk4daluz5tg3clxjv","address":"did:grid:aa1n7rdpqvgf37ktx30a2sv2kkszk3m7ncmz086cd","description":"description"}}`
 	require.Equal(t, expected, string(res))
 }
 
@@ -110,7 +110,7 @@ func TestMsgDeleteSuperType(t *testing.T) {
 func TestMsgDeleteSuperGetSignBytes(t *testing.T) {
 	msg := NewMsgDeleteSuper(testAddr, sender)
 	res := msg.GetSignBytes()
-	expected := `{"type":"furyhub/guardian/MsgDeleteSuper","value":{"address":"did:fury:aa1n7rdpqvgf37ktx30a2sv2kkszk3m7ncmz086cd","deleted_by":"did:fury:aa1pgm8hyk0pvphmlvfjc8wsvk4daluz5tg3clxjv"}}`
+	expected := `{"type":"GridIron/guardian/MsgDeleteSuper","value":{"address":"did:grid:aa1n7rdpqvgf37ktx30a2sv2kkszk3m7ncmz086cd","deleted_by":"did:grid:aa1pgm8hyk0pvphmlvfjc8wsvk4daluz5tg3clxjv"}}`
 	require.Equal(t, expected, string(res))
 }
 

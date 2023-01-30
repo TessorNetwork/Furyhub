@@ -3,8 +3,8 @@ package mint
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/tessornetwork/furyhub/modules/mint/keeper"
-	"github.com/tessornetwork/furyhub/modules/mint/types"
+	"github.com/gridironprotocol/gridiron/modules/mint/keeper"
+	"github.com/gridironprotocol/gridiron/modules/mint/types"
 )
 
 // BeginBlocker handles block beginning logic for mint

@@ -83,49 +83,49 @@ import (
 	porttypes "github.com/cosmos/ibc-go/v5/modules/core/05-port/types"
 	ibchost "github.com/cosmos/ibc-go/v5/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v5/modules/core/keeper"
-	"github.com/irisnet/irismod/modules/token"
+	"github.com/gridironprotocol/irismod/modules/token"
 
 	simappparams "github.com/cosmos/cosmos-sdk/simapp/params"
-	"github.com/irisnet/irismod/modules/coinswap"
-	coinswapkeeper "github.com/irisnet/irismod/modules/coinswap/keeper"
-	coinswaptypes "github.com/irisnet/irismod/modules/coinswap/types"
-	"github.com/irisnet/irismod/modules/htlc"
-	htlckeeper "github.com/irisnet/irismod/modules/htlc/keeper"
-	htlctypes "github.com/irisnet/irismod/modules/htlc/types"
-	"github.com/irisnet/irismod/modules/mt"
-	mtkeeper "github.com/irisnet/irismod/modules/mt/keeper"
-	mttypes "github.com/irisnet/irismod/modules/mt/types"
-	nftkeeper "github.com/irisnet/irismod/modules/nft/keeper"
-	nftmodule "github.com/irisnet/irismod/modules/nft/module"
-	nfttypes "github.com/irisnet/irismod/modules/nft/types"
-	"github.com/irisnet/irismod/modules/oracle"
-	oraclekeeper "github.com/irisnet/irismod/modules/oracle/keeper"
-	oracletypes "github.com/irisnet/irismod/modules/oracle/types"
-	"github.com/irisnet/irismod/modules/random"
-	randomkeeper "github.com/irisnet/irismod/modules/random/keeper"
-	randomtypes "github.com/irisnet/irismod/modules/random/types"
-	"github.com/irisnet/irismod/modules/record"
-	recordkeeper "github.com/irisnet/irismod/modules/record/keeper"
-	recordtypes "github.com/irisnet/irismod/modules/record/types"
-	"github.com/irisnet/irismod/modules/service"
-	servicekeeper "github.com/irisnet/irismod/modules/service/keeper"
-	servicetypes "github.com/irisnet/irismod/modules/service/types"
+	"github.com/gridironprotocol/irismod/modules/coinswap"
+	coinswapkeeper "github.com/gridironprotocol/irismod/modules/coinswap/keeper"
+	coinswaptypes "github.com/gridironprotocol/irismod/modules/coinswap/types"
+	"github.com/gridironprotocol/irismod/modules/htlc"
+	htlckeeper "github.com/gridironprotocol/irismod/modules/htlc/keeper"
+	htlctypes "github.com/gridironprotocol/irismod/modules/htlc/types"
+	"github.com/gridironprotocol/irismod/modules/mt"
+	mtkeeper "github.com/gridironprotocol/irismod/modules/mt/keeper"
+	mttypes "github.com/gridironprotocol/irismod/modules/mt/types"
+	nftkeeper "github.com/gridironprotocol/irismod/modules/nft/keeper"
+	nftmodule "github.com/gridironprotocol/irismod/modules/nft/module"
+	nfttypes "github.com/gridironprotocol/irismod/modules/nft/types"
+	"github.com/gridironprotocol/irismod/modules/oracle"
+	oraclekeeper "github.com/gridironprotocol/irismod/modules/oracle/keeper"
+	oracletypes "github.com/gridironprotocol/irismod/modules/oracle/types"
+	"github.com/gridironprotocol/irismod/modules/random"
+	randomkeeper "github.com/gridironprotocol/irismod/modules/random/keeper"
+	randomtypes "github.com/gridironprotocol/irismod/modules/random/types"
+	"github.com/gridironprotocol/irismod/modules/record"
+	recordkeeper "github.com/gridironprotocol/irismod/modules/record/keeper"
+	recordtypes "github.com/gridironprotocol/irismod/modules/record/types"
+	"github.com/gridironprotocol/irismod/modules/service"
+	servicekeeper "github.com/gridironprotocol/irismod/modules/service/keeper"
+	servicetypes "github.com/gridironprotocol/irismod/modules/service/types"
 
-	tokenkeeper "github.com/irisnet/irismod/modules/token/keeper"
-	tokentypes "github.com/irisnet/irismod/modules/token/types"
+	tokenkeeper "github.com/gridironprotocol/irismod/modules/token/keeper"
+	tokentypes "github.com/gridironprotocol/irismod/modules/token/types"
 
-	"github.com/tessornetwork/furyhub/address"
-	"github.com/tessornetwork/furyhub/lite"
-	"github.com/tessornetwork/furyhub/modules/guardian"
-	guardiankeeper "github.com/tessornetwork/furyhub/modules/guardian/keeper"
-	guardiantypes "github.com/tessornetwork/furyhub/modules/guardian/types"
-	"github.com/tessornetwork/furyhub/modules/mint"
-	mintkeeper "github.com/tessornetwork/furyhub/modules/mint/keeper"
-	minttypes "github.com/tessornetwork/furyhub/modules/mint/types"
+	"github.com/gridironprotocol/gridiron/address"
+	"github.com/gridironprotocol/gridiron/lite"
+	"github.com/gridironprotocol/gridiron/modules/guardian"
+	guardiankeeper "github.com/gridironprotocol/gridiron/modules/guardian/keeper"
+	guardiantypes "github.com/gridironprotocol/gridiron/modules/guardian/types"
+	"github.com/gridironprotocol/gridiron/modules/mint"
+	mintkeeper "github.com/gridironprotocol/gridiron/modules/mint/keeper"
+	minttypes "github.com/gridironprotocol/gridiron/modules/mint/types"
 
-	"github.com/irisnet/irismod/modules/farm"
-	farmkeeper "github.com/irisnet/irismod/modules/farm/keeper"
-	farmtypes "github.com/irisnet/irismod/modules/farm/types"
+	"github.com/gridironprotocol/irismod/modules/farm"
+	farmkeeper "github.com/gridironprotocol/irismod/modules/farm/keeper"
+	farmtypes "github.com/gridironprotocol/irismod/modules/farm/types"
 
 	tibcmttransfer "github.com/bianjieai/tibc-go/modules/tibc/apps/mt_transfer"
 	tibcmttransferkeeper "github.com/bianjieai/tibc-go/modules/tibc/apps/mt_transfer/keeper"
@@ -305,10 +305,10 @@ func init() {
 	sdk.SetCoinDenomRegex(DefaultCoinDenomRegex)
 
 	nativeToken = tokentypes.Token{
-		Symbol:        "fury",
-		Name:          "Furyhub staking token",
+		Symbol:        "grid",
+		Name:          "GridIron staking token",
 		Scale:         6,
-		MinUnit:       "ufury",
+		MinUnit:       "ugrid",
 		InitialSupply: 2000000000,
 		MaxSupply:     10000000000,
 		Mintable:      true,
@@ -320,7 +320,7 @@ func init() {
 		panic(err)
 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".fury")
+	DefaultNodeHome = filepath.Join(userHomeDir, ".grid")
 	owner, err := sdk.AccAddressFromBech32(nativeToken.Owner)
 	if err != nil {
 		panic(err)
@@ -343,7 +343,7 @@ func DefaultCoinDenomRegex() string {
 	return reDnmString
 }
 
-// NewSimApp returns a reference to an initialized FuryApp.
+// NewSimApp returns a reference to an initialized GridApp.
 func NewSimApp(
 	logger log.Logger,
 	db dbm.DB,
@@ -908,8 +908,8 @@ func NewSimApp(
 }
 
 // MakeCodecs constructs the *std.Codec and *codec.LegacyAmino instances used by
-// furyapp. It is useful for tests and clients who do not want to construct the
-// full furyapp
+// gridapp. It is useful for tests and clients who do not want to construct the
+// full gridapp
 func MakeCodecs() (codec.Codec, *codec.LegacyAmino) {
 	config := MakeTestEncodingConfig()
 	return config.Codec, config.Amino
@@ -983,7 +983,7 @@ func (app *SimApp) LegacyAmino() *codec.LegacyAmino {
 	return app.legacyAmino
 }
 
-// AppCodec returns FuryApp's app codec.
+// AppCodec returns GridApp's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
@@ -991,7 +991,7 @@ func (app *SimApp) AppCodec() codec.Codec {
 	return app.appCodec
 }
 
-// InterfaceRegistry returns FuryApp's InterfaceRegistry
+// InterfaceRegistry returns GridApp's InterfaceRegistry
 func (app *SimApp) InterfaceRegistry() types.InterfaceRegistry {
 	return app.interfaceRegistry
 }

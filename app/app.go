@@ -96,48 +96,48 @@ import (
 	ibchost "github.com/cosmos/ibc-go/v5/modules/core/24-host"
 	ibckeeper "github.com/cosmos/ibc-go/v5/modules/core/keeper"
 
-	"github.com/irisnet/irismod/modules/coinswap"
-	coinswapkeeper "github.com/irisnet/irismod/modules/coinswap/keeper"
-	coinswaptypes "github.com/irisnet/irismod/modules/coinswap/types"
-	"github.com/irisnet/irismod/modules/htlc"
-	htlckeeper "github.com/irisnet/irismod/modules/htlc/keeper"
-	htlctypes "github.com/irisnet/irismod/modules/htlc/types"
-	"github.com/irisnet/irismod/modules/mt"
-	mtkeeper "github.com/irisnet/irismod/modules/mt/keeper"
-	mttypes "github.com/irisnet/irismod/modules/mt/types"
-	nftkeeper "github.com/irisnet/irismod/modules/nft/keeper"
-	nftmodule "github.com/irisnet/irismod/modules/nft/module"
-	nfttypes "github.com/irisnet/irismod/modules/nft/types"
-	"github.com/irisnet/irismod/modules/oracle"
-	oraclekeeper "github.com/irisnet/irismod/modules/oracle/keeper"
-	oracletypes "github.com/irisnet/irismod/modules/oracle/types"
-	"github.com/irisnet/irismod/modules/random"
-	randomkeeper "github.com/irisnet/irismod/modules/random/keeper"
-	randomtypes "github.com/irisnet/irismod/modules/random/types"
-	"github.com/irisnet/irismod/modules/record"
-	recordkeeper "github.com/irisnet/irismod/modules/record/keeper"
-	recordtypes "github.com/irisnet/irismod/modules/record/types"
-	"github.com/irisnet/irismod/modules/service"
-	servicekeeper "github.com/irisnet/irismod/modules/service/keeper"
-	servicetypes "github.com/irisnet/irismod/modules/service/types"
-	"github.com/irisnet/irismod/modules/token"
-	tokenkeeper "github.com/irisnet/irismod/modules/token/keeper"
-	tokentypes "github.com/irisnet/irismod/modules/token/types"
+	"github.com/gridironprotocol/irismod/modules/coinswap"
+	coinswapkeeper "github.com/gridironprotocol/irismod/modules/coinswap/keeper"
+	coinswaptypes "github.com/gridironprotocol/irismod/modules/coinswap/types"
+	"github.com/gridironprotocol/irismod/modules/htlc"
+	htlckeeper "github.com/gridironprotocol/irismod/modules/htlc/keeper"
+	htlctypes "github.com/gridironprotocol/irismod/modules/htlc/types"
+	"github.com/gridironprotocol/irismod/modules/mt"
+	mtkeeper "github.com/gridironprotocol/irismod/modules/mt/keeper"
+	mttypes "github.com/gridironprotocol/irismod/modules/mt/types"
+	nftkeeper "github.com/gridironprotocol/irismod/modules/nft/keeper"
+	nftmodule "github.com/gridironprotocol/irismod/modules/nft/module"
+	nfttypes "github.com/gridironprotocol/irismod/modules/nft/types"
+	"github.com/gridironprotocol/irismod/modules/oracle"
+	oraclekeeper "github.com/gridironprotocol/irismod/modules/oracle/keeper"
+	oracletypes "github.com/gridironprotocol/irismod/modules/oracle/types"
+	"github.com/gridironprotocol/irismod/modules/random"
+	randomkeeper "github.com/gridironprotocol/irismod/modules/random/keeper"
+	randomtypes "github.com/gridironprotocol/irismod/modules/random/types"
+	"github.com/gridironprotocol/irismod/modules/record"
+	recordkeeper "github.com/gridironprotocol/irismod/modules/record/keeper"
+	recordtypes "github.com/gridironprotocol/irismod/modules/record/types"
+	"github.com/gridironprotocol/irismod/modules/service"
+	servicekeeper "github.com/gridironprotocol/irismod/modules/service/keeper"
+	servicetypes "github.com/gridironprotocol/irismod/modules/service/types"
+	"github.com/gridironprotocol/irismod/modules/token"
+	tokenkeeper "github.com/gridironprotocol/irismod/modules/token/keeper"
+	tokentypes "github.com/gridironprotocol/irismod/modules/token/types"
 
-	"github.com/tessornetwork/furyhub/address"
-	furyhubante "github.com/tessornetwork/furyhub/ante"
-	furyappparams "github.com/tessornetwork/furyhub/app/params"
-	"github.com/tessornetwork/furyhub/lite"
-	"github.com/tessornetwork/furyhub/modules/guardian"
-	guardiankeeper "github.com/tessornetwork/furyhub/modules/guardian/keeper"
-	guardiantypes "github.com/tessornetwork/furyhub/modules/guardian/types"
-	"github.com/tessornetwork/furyhub/modules/mint"
-	mintkeeper "github.com/tessornetwork/furyhub/modules/mint/keeper"
-	minttypes "github.com/tessornetwork/furyhub/modules/mint/types"
+	"github.com/gridironprotocol/gridiron/address"
+	GridIronante "github.com/gridironprotocol/gridiron/ante"
+	gridappparams "github.com/gridironprotocol/gridiron/app/params"
+	"github.com/gridironprotocol/gridiron/lite"
+	"github.com/gridironprotocol/gridiron/modules/guardian"
+	guardiankeeper "github.com/gridironprotocol/gridiron/modules/guardian/keeper"
+	guardiantypes "github.com/gridironprotocol/gridiron/modules/guardian/types"
+	"github.com/gridironprotocol/gridiron/modules/mint"
+	mintkeeper "github.com/gridironprotocol/gridiron/modules/mint/keeper"
+	minttypes "github.com/gridironprotocol/gridiron/modules/mint/types"
 
-	"github.com/irisnet/irismod/modules/farm"
-	farmkeeper "github.com/irisnet/irismod/modules/farm/keeper"
-	farmtypes "github.com/irisnet/irismod/modules/farm/types"
+	"github.com/gridironprotocol/irismod/modules/farm"
+	farmkeeper "github.com/gridironprotocol/irismod/modules/farm/keeper"
+	farmtypes "github.com/gridironprotocol/irismod/modules/farm/types"
 
 	tibcmttransfer "github.com/bianjieai/tibc-go/modules/tibc/apps/mt_transfer"
 	tibcmttransferkeeper "github.com/bianjieai/tibc-go/modules/tibc/apps/mt_transfer/keeper"
@@ -154,7 +154,7 @@ import (
 	tibckeeper "github.com/bianjieai/tibc-go/modules/tibc/core/keeper"
 )
 
-const appName = "FuryApp"
+const appName = "GridApp"
 
 var (
 	// DefaultNodeHome default home directories for the application daemon
@@ -245,14 +245,14 @@ var (
 )
 
 var (
-	_ simapp.App              = (*FuryApp)(nil)
-	_ servertypes.Application = (*FuryApp)(nil)
+	_ simapp.App              = (*GridApp)(nil)
+	_ servertypes.Application = (*GridApp)(nil)
 )
 
-// FuryApp extends an ABCI application, but with most of its parameters exported.
+// GridApp extends an ABCI application, but with most of its parameters exported.
 // They are exported for convenience in creating helper functions, as object
 // capabilities aren't needed for testing.
-type FuryApp struct {
+type GridApp struct {
 	*baseapp.BaseApp
 	legacyAmino       *codec.LegacyAmino
 	appCodec          codec.Codec
@@ -325,10 +325,10 @@ func init() {
 	sdk.SetCoinDenomRegex(DefaultCoinDenomRegex)
 
 	nativeToken = tokentypes.Token{
-		Symbol:        "fury",
-		Name:          "Furyhub staking token",
+		Symbol:        "grid",
+		Name:          "GridIron staking token",
 		Scale:         6,
-		MinUnit:       "ufury",
+		MinUnit:       "ugrid",
 		InitialSupply: 2000000000,
 		MaxSupply:     10000000000,
 		Mintable:      true,
@@ -340,7 +340,7 @@ func init() {
 		panic(err)
 	}
 
-	DefaultNodeHome = filepath.Join(userHomeDir, ".fury")
+	DefaultNodeHome = filepath.Join(userHomeDir, ".grid")
 	owner, err := sdk.AccAddressFromBech32(nativeToken.Owner)
 	if err != nil {
 		panic(err)
@@ -363,8 +363,8 @@ func DefaultCoinDenomRegex() string {
 	return reDnmString
 }
 
-// NewFuryApp returns a reference to an initialized FuryApp.
-func NewFuryApp(
+// NewGridApp returns a reference to an initialized GridApp.
+func NewGridApp(
 	logger log.Logger,
 	db dbm.DB,
 	traceStore io.Writer,
@@ -372,10 +372,10 @@ func NewFuryApp(
 	skipUpgradeHeights map[int64]bool,
 	homePath string,
 	invCheckPeriod uint,
-	encodingConfig furyappparams.EncodingConfig,
+	encodingConfig gridappparams.EncodingConfig,
 	appOpts servertypes.AppOptions,
 	baseAppOptions ...func(*baseapp.BaseApp),
-) *FuryApp {
+) *GridApp {
 
 	// TODO: Remove cdc in favor of appCodec once all modules are migrated.
 	appCodec := encodingConfig.Marshaler
@@ -406,7 +406,7 @@ func NewFuryApp(
 		tmos.Exit(err.Error())
 	}
 
-	app := &FuryApp{
+	app := &GridApp{
 		BaseApp:           bApp,
 		legacyAmino:       legacyAmino,
 		appCodec:          appCodec,
@@ -935,8 +935,8 @@ func NewFuryApp(
 	app.MountTransientStores(tkeys)
 	app.MountMemoryStores(memKeys)
 
-	anteHandler, err := furyhubante.NewAnteHandler(
-		furyhubante.HandlerOptions{
+	anteHandler, err := GridIronante.NewAnteHandler(
+		GridIronante.HandlerOptions{
 			HandlerOptions: ante.HandlerOptions{
 				AccountKeeper:   app.AccountKeeper,
 				BankKeeper:      app.BankKeeper,
@@ -984,20 +984,20 @@ func NewFuryApp(
 }
 
 // Name returns the name of the App
-func (app *FuryApp) Name() string { return app.BaseApp.Name() }
+func (app *GridApp) Name() string { return app.BaseApp.Name() }
 
 // BeginBlocker application updates every begin block
-func (app *FuryApp) BeginBlocker(ctx sdk.Context, req abci.RequestBeginBlock) abci.ResponseBeginBlock {
+func (app *GridApp) BeginBlocker(ctx sdk.Context, req abci.RequestBeginBlock) abci.ResponseBeginBlock {
 	return app.mm.BeginBlock(ctx, req)
 }
 
 // EndBlocker application updates every end block
-func (app *FuryApp) EndBlocker(ctx sdk.Context, req abci.RequestEndBlock) abci.ResponseEndBlock {
+func (app *GridApp) EndBlocker(ctx sdk.Context, req abci.RequestEndBlock) abci.ResponseEndBlock {
 	return app.mm.EndBlock(ctx, req)
 }
 
 // InitChainer application update at chain initialization
-func (app *FuryApp) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci.ResponseInitChain {
+func (app *GridApp) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci.ResponseInitChain {
 	var genesisState GenesisState
 	if err := tmjson.Unmarshal(req.AppStateBytes, &genesisState); err != nil {
 		panic(err)
@@ -1017,12 +1017,12 @@ func (app *FuryApp) InitChainer(ctx sdk.Context, req abci.RequestInitChain) abci
 }
 
 // LoadHeight loads a particular height
-func (app *FuryApp) LoadHeight(height int64) error {
+func (app *GridApp) LoadHeight(height int64) error {
 	return app.LoadVersion(height)
 }
 
 // ModuleAccountAddrs returns all the app's module account addresses.
-func (app *FuryApp) ModuleAccountAddrs() map[string]bool {
+func (app *GridApp) ModuleAccountAddrs() map[string]bool {
 	modAccAddrs := make(map[string]bool)
 	for acc := range maccPerms {
 		modAccAddrs[authtypes.NewModuleAddress(acc).String()] = true
@@ -1033,7 +1033,7 @@ func (app *FuryApp) ModuleAccountAddrs() map[string]bool {
 
 // BlockedModuleAccountAddrs returns all the app's blocked module account
 // addresses.
-func (app *FuryApp) BlockedModuleAccountAddrs() map[string]bool {
+func (app *GridApp) BlockedModuleAccountAddrs() map[string]bool {
 	modAccAddrs := app.ModuleAccountAddrs()
 
 	// remove module accounts that are ALLOWED to received funds
@@ -1049,59 +1049,59 @@ func (app *FuryApp) BlockedModuleAccountAddrs() map[string]bool {
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *FuryApp) LegacyAmino() *codec.LegacyAmino {
+func (app *GridApp) LegacyAmino() *codec.LegacyAmino {
 	return app.legacyAmino
 }
 
-// AppCodec returns FuryApp's app codec.
+// AppCodec returns GridApp's app codec.
 //
 // NOTE: This is solely to be used for testing purposes as it may be desirable
 // for modules to register their own custom testing types.
-func (app *FuryApp) AppCodec() codec.Codec {
+func (app *GridApp) AppCodec() codec.Codec {
 	return app.appCodec
 }
 
-// InterfaceRegistry returns FuryApp's InterfaceRegistry
-func (app *FuryApp) InterfaceRegistry() types.InterfaceRegistry {
+// InterfaceRegistry returns GridApp's InterfaceRegistry
+func (app *GridApp) InterfaceRegistry() types.InterfaceRegistry {
 	return app.interfaceRegistry
 }
 
 // GetKey returns the KVStoreKey for the provided store key.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *FuryApp) GetKey(storeKey string) *storetypes.KVStoreKey {
+func (app *GridApp) GetKey(storeKey string) *storetypes.KVStoreKey {
 	return app.keys[storeKey]
 }
 
 // GetTKey returns the TransientStoreKey for the provided store key.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *FuryApp) GetTKey(storeKey string) *storetypes.TransientStoreKey {
+func (app *GridApp) GetTKey(storeKey string) *storetypes.TransientStoreKey {
 	return app.tkeys[storeKey]
 }
 
 // GetMemKey returns the MemStoreKey for the provided mem key.
 //
 // NOTE: This is solely used for testing purposes.
-func (app *FuryApp) GetMemKey(storeKey string) *storetypes.MemoryStoreKey {
+func (app *GridApp) GetMemKey(storeKey string) *storetypes.MemoryStoreKey {
 	return app.memKeys[storeKey]
 }
 
 // GetSubspace returns a param subspace for a given module name.
 //
 // NOTE: This is solely to be used for testing purposes.
-func (app *FuryApp) GetSubspace(moduleName string) paramstypes.Subspace {
+func (app *GridApp) GetSubspace(moduleName string) paramstypes.Subspace {
 	subspace, _ := app.ParamsKeeper.GetSubspace(moduleName)
 	return subspace
 }
 
 // SimulationManager implements the SimulationApp interface
-func (app *FuryApp) SimulationManager() *module.SimulationManager {
+func (app *GridApp) SimulationManager() *module.SimulationManager {
 	return app.sm
 }
 
 // RegisterAPIRoutes registers all application module routes with the provided API server.
-func (app *FuryApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
+func (app *GridApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APIConfig) {
 	clientCtx := apiSvr.ClientCtx
 	// Register new tx routes from grpc-gateway.
 	authtx.RegisterGRPCGatewayRoutes(clientCtx, apiSvr.GRPCGatewayRouter)
@@ -1118,12 +1118,12 @@ func (app *FuryApp) RegisterAPIRoutes(apiSvr *api.Server, apiConfig config.APICo
 }
 
 // RegisterTxService implements the Application.RegisterTxService method.
-func (app *FuryApp) RegisterTxService(clientCtx client.Context) {
+func (app *GridApp) RegisterTxService(clientCtx client.Context) {
 	authtx.RegisterTxService(app.BaseApp.GRPCQueryRouter(), clientCtx, app.BaseApp.Simulate, app.interfaceRegistry)
 }
 
 // RegisterTendermintService implements the Application.RegisterTendermintService method.
-func (app *FuryApp) RegisterTendermintService(clientCtx client.Context) {
+func (app *GridApp) RegisterTendermintService(clientCtx client.Context) {
 	tmservice.RegisterTendermintService(
 		clientCtx,
 		app.BaseApp.GRPCQueryRouter(),
@@ -1133,7 +1133,7 @@ func (app *FuryApp) RegisterTendermintService(clientCtx client.Context) {
 }
 
 // RegisterUpgradeHandler implements the upgrade execution logic of the upgrade module
-func (app *FuryApp) RegisterUpgradeHandler(
+func (app *GridApp) RegisterUpgradeHandler(
 	planName string,
 	upgrades *storetypes.StoreUpgrades,
 	upgradeHandler sdkupgrade.UpgradeHandler,

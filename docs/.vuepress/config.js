@@ -40,12 +40,12 @@ module.exports = {
     locales: {
         "/": {
             lang: "en-US",
-            title: "FURYnet Documents",
-            description: "FURYnet Documents",
+            title: "GRIDnet Documents",
+            description: "GRIDnet Documents",
         }
     },
     themeConfig: {
-        repo: "tessornetwork/furyhub",
+        repo: "gridironprotocol/gridiron",
         docsDir: "docs",
         editLinks: true,
         docsBranch: "master",
@@ -55,8 +55,8 @@ module.exports = {
                 editLinkText: 'Help us improve this page!',
                 nav: [
                     {
-                        text: 'Back to FURYnet',
-                        link: 'https://www.irisnet.org'
+                        text: 'Back to GRIDnet',
+                        link: 'https://www.gridironprotocol.org'
                     }
                 ],
                 sidebar: sidebar("", [

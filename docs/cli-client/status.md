@@ -11,7 +11,7 @@ Query node status
 ## Query node status
 
 ```bash
-fury status
+grid status
 ```
 
 Example Output:

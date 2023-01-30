@@ -9,14 +9,14 @@ import (
 	"strings"
 	"testing"
 
-	coinswaptypes "github.com/irisnet/irismod/modules/coinswap/types"
-	htlctypes "github.com/irisnet/irismod/modules/htlc/types"
-	mttypes "github.com/irisnet/irismod/modules/mt/types"
-	nfttypes "github.com/irisnet/irismod/modules/nft/types"
-	oracletypes "github.com/irisnet/irismod/modules/oracle/types"
-	randomtypes "github.com/irisnet/irismod/modules/random/types"
-	servicetypes "github.com/irisnet/irismod/modules/service/types"
-	tokentypes "github.com/irisnet/irismod/modules/token/types"
+	coinswaptypes "github.com/gridironprotocol/irismod/modules/coinswap/types"
+	htlctypes "github.com/gridironprotocol/irismod/modules/htlc/types"
+	mttypes "github.com/gridironprotocol/irismod/modules/mt/types"
+	nfttypes "github.com/gridironprotocol/irismod/modules/nft/types"
+	oracletypes "github.com/gridironprotocol/irismod/modules/oracle/types"
+	randomtypes "github.com/gridironprotocol/irismod/modules/random/types"
+	servicetypes "github.com/gridironprotocol/irismod/modules/service/types"
+	tokentypes "github.com/gridironprotocol/irismod/modules/token/types"
 	"github.com/stretchr/testify/require"
 
 	abci "github.com/tendermint/tendermint/abci/types"
@@ -81,8 +81,8 @@ func TestFullAppSimulation(t *testing.T) {
 		require.NoError(t, os.RemoveAll(dir))
 	}()
 
-	app := NewFuryApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
-	require.Equal(t, "FuryApp", app.Name())
+	app := NewGridApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
+	require.Equal(t, "GridApp", app.Name())
 
 	// run randomized simulation
 	_, simParams, simErr := simulation.SimulateFromSeed(
@@ -119,8 +119,8 @@ func TestAppImportExport(t *testing.T) {
 		require.NoError(t, os.RemoveAll(dir))
 	}()
 
-	app := NewFuryApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
-	require.Equal(t, "FuryApp", app.Name())
+	app := NewGridApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
+	require.Equal(t, "GridApp", app.Name())
 
 	// Run randomized simulation
 	_, simParams, simErr := simulation.SimulateFromSeed(
@@ -159,8 +159,8 @@ func TestAppImportExport(t *testing.T) {
 		require.NoError(t, os.RemoveAll(newDir))
 	}()
 
-	newApp := NewFuryApp(log.NewNopLogger(), newDB, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
-	require.Equal(t, "FuryApp", newApp.Name())
+	newApp := NewGridApp(log.NewNopLogger(), newDB, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
+	require.Equal(t, "GridApp", newApp.Name())
 
 	var genesisState GenesisState
 	err = json.Unmarshal(exported.AppState, &genesisState)
@@ -238,8 +238,8 @@ func TestAppSimulationAfterImport(t *testing.T) {
 		require.NoError(t, os.RemoveAll(dir))
 	}()
 
-	app := NewFuryApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
-	require.Equal(t, "FuryApp", app.Name())
+	app := NewGridApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
+	require.Equal(t, "GridApp", app.Name())
 
 	// Run randomized simulation
 	stopEarly, simParams, simErr := simulation.SimulateFromSeed(
@@ -283,8 +283,8 @@ func TestAppSimulationAfterImport(t *testing.T) {
 		require.NoError(t, os.RemoveAll(newDir))
 	}()
 
-	newApp := NewFuryApp(log.NewNopLogger(), newDB, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
-	require.Equal(t, "FuryApp", newApp.Name())
+	newApp := NewGridApp(log.NewNopLogger(), newDB, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, fauxMerkleModeOpt)
+	require.Equal(t, "GridApp", newApp.Name())
 
 	newApp.InitChain(abci.RequestInitChain{
 		AppStateBytes: exported.AppState,
@@ -334,7 +334,7 @@ func TestAppStateDeterminism(t *testing.T) {
 			}
 
 			db := dbm.NewMemDB()
-			app := NewFuryApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, interBlockCacheOpt())
+			app := NewGridApp(logger, db, nil, true, map[int64]bool{}, DefaultNodeHome, simapp.FlagPeriodValue, MakeEncodingConfig(), EmptyAppOptions{}, interBlockCacheOpt())
 
 			fmt.Printf(
 				"running non-determinism simulation; seed %d: %d/%d, attempt: %d/%d\n",

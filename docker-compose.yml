@@ -1,50 +1,50 @@
 version: '3'
 
 services:
-  furynode0:
-    container_name: furynode0
-    image: nimrostafarian/tessornetwork:fury.1                                                                                                                                           
+  gridnode0:
+    container_name: gridnode0
+    image: nimrostafarian/gridironprotocol:grid.1                                                                                                                                           
     ports:
     - "26656-26657:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node0 && fury start --home fury'
+    command: /bin/sh -c 'cd /home/nodecluster/node0 && grid start --home grid'
     networks:
       localnet:
         ipv4_address: 192.168.10.2
 
-  furynode1:
-    container_name: furynode1
-    image: nimrostafarian/tessornetwork:fury.1                                                                                                                                           
+  gridnode1:
+    container_name: gridnode1
+    image: nimrostafarian/gridironprotocol:grid.1                                                                                                                                           
     ports:
     - "26659-26660:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node1 && fury start --home fury'
+    command: /bin/sh -c 'cd /home/nodecluster/node1 && grid start --home grid'
     networks:
       localnet:
         ipv4_address: 192.168.10.3
 
-  furynode2:
-    container_name: furynode2
-    image: nimrostafarian/tessornetwork:fury.1                                                                                                                                           
+  gridnode2:
+    container_name: gridnode2
+    image: nimrostafarian/gridironprotocol:grid.1                                                                                                                                           
     ports:
     - "26661-26662:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node2 && fury start --home fury'
+    command: /bin/sh -c 'cd /home/nodecluster/node2 && grid start --home grid'
     networks:
       localnet:
         ipv4_address: 192.168.10.4
 
-  furynode3:
-    container_name: furynode3
-    image: nimrostafarian/tessornetwork:fury.1                                                                                                                                           
+  gridnode3:
+    container_name: gridnode3
+    image: nimrostafarian/gridironprotocol:grid.1                                                                                                                                           
     ports:
     - "26663-26664:26656-26657"
     volumes:
     - ./build:/home
-    command: /bin/sh -c 'cd /home/nodecluster/node3 && fury start --home fury'
+    command: /bin/sh -c 'cd /home/nodecluster/node3 && grid start --home grid'
     networks:
       localnet:
         ipv4_address: 192.168.10.5
